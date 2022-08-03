@@ -1,4 +1,4 @@
 
-DROP DATABASE IF EXISTS tech_blog_db;
+DROP DATABASE IF EXISTS videogames;
 
-CREATE DATABASE tech_blog_db;
+CREATE DATABASE videogames;
