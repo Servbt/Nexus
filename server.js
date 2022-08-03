@@ -1,22 +1,16 @@
-//  INSTRUCTOR PROVIDED
-const path = require('path');
-const express = require('express');
-const session = require('express-session');
-const expressHandlebars = require('express-handlebars');
-const routes = require('./controllers');
-const helpers = require('./MiddleWare/helpers');
-const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-
+const path = require("path");
+const express = require("express");
+const session = require("express-session");
+const exphbs = require("express-handlebars");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const handlebars = expressHandlebars.create({ helpers });
+const sequelize = require("./config/connection.js");
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const sessionObject = {
-  secret: 'Bread is very delicious when freshly baked',
+const sess = {
+  secret: "Super secret secret",
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -25,17 +19,26 @@ const sessionObject = {
   })
 };
 
-app.use(session(sessionObject));
+app.use(session(sess));
 
-app.engine('handlebars', handlebars.engine);
-app.set('view engine', 'handlebars');
+const hbs = exphbs.create({
+  helpers: {
+    format_date: date => {
+      return `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+    }
+  }
+});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
-app.use(routes);
+app.use(require('./controllers/'));
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}!`);
+  sequelize.sync({ force: false });
 });

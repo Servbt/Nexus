@@ -1,4 +1,3 @@
-// INSTRUCTOR PROVIDED CODE // 
 const Sequelize = require('sequelize');
 require('dotenv').config();
 
