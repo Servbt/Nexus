@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Game extends Model {}
+class Game extends Model { }
 
 Game.init(
   {
@@ -11,7 +11,7 @@ Game.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    game_name: {
+    game: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -26,7 +26,6 @@ Game.init(
   },
   {
     sequelize,
-    freezeTableName: true,
     underscored: true,
     modelName: 'game',
   }
