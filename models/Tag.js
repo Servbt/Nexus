@@ -1,23 +1,15 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize = require('../config/connection.js');
 
-class Review extends Model { }
+class Tag extends Model { };
 
-Review.init(
+Tag.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      autoIncrement: true,
       primaryKey: true,
-    },
-    review_title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    content: {
-      type: DataTypes.STRING,
-      allowNull: false
+      autoIncrement: true
     },
     user_id: {
       type: DataTypes.INTEGER,
@@ -32,13 +24,21 @@ Review.init(
         model: 'game',
         key: 'id'
       }
+    },
+    review_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'review',
+        key: 'id'
+      }
     }
   },
   {
     sequelize,
+    timestamps: false,
     underscored: true,
-    modelName: 'review'
+    modelName: 'tag'
   }
 );
 
-module.exports = Review;
+module.exports = Tag;
