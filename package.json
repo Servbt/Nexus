@@ -1,16 +1,22 @@
 {
-  "name": "wip",
+  "name": "tech-blog",
   "version": "1.0.0",
-  "description": "This project will revolve around user reviews and video-game search",
-  "main": "server.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/layc41/tech-blog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/layc41/tech-blog/issues"
+  },
+  "homepage": "https://github.com/layc41/tech-blog#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
@@ -18,12 +24,9 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "express.js": "^1.0.0",
+    "mysql": "^2.18.1",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
-  },
-  "devDependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "prettier": "^2.1.2"
   }
 }
