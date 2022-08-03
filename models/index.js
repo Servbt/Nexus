@@ -7,6 +7,14 @@ Review.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
+Post.hasMany(Review, {
+  foreignKey: 'postId',
+  onDelete: 'CASCADE'
+});
+
+Review.belongsTo(User, {
+  foreignKey: 'userId',
+
 User.hasMany(Game, {
   foreignKey: 'game_id',
   onDelete: 'CASCADE'
@@ -14,6 +22,7 @@ User.hasMany(Game, {
 
 User.hasMany(Review, {
   foreignKey: 'user_id',
+
   onDelete: 'CASCADE'
 });
 
