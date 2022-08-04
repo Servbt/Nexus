@@ -14,21 +14,21 @@ Tag.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
+        model: 'users',
         key: 'id'
       }
     },
     game_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'game',
+        model: 'games',
         key: 'id'
       }
     },
     review_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'review',
+        model: 'reviews',
         key: 'id'
       }
     }
