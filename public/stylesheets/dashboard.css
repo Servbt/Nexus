@@ -1,3 +1,7 @@
+.wrapper{ 
+  display:grid;
+  grid-template-columns: 280px 1fr;
+}
 .sidebar {
     max-height: 100vh;
     min-height: 100vh;
@@ -11,8 +15,8 @@ body {
     position: absolute;
     height: 300px;
     width: 800px;
-    top: 60px;
-    left: calc(50% - 300px);
+    top: 180px;
+    left: calc(60% - 300px);
     display: flex;
   }
   
@@ -111,3 +115,11 @@ body {
   .nav-pills .nav-link.active {
     background-color: red;
   }
+h1 {
+  color:rgba(255, 0, 0, 0.925);
+  justify-content:end;
+  margin-left: 20px;
+}
+.nav-link {
+  color: rgb(253, 253, 253);
+}
