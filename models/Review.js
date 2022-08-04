@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const User = require('./User');
-const Game = require('./game');
+const Game = require('./Game');
 
 class Review extends Model { }
 
