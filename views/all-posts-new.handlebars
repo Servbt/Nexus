@@ -1,17 +1,21 @@
-<div class="games">
+<div class="container autoplay">
   {{#each games}}
-  <article class="card">
-    <div class="card-header flex-row justify-space-between">
-      <h2>
-        <a href="/game/{{id}}">{{game}}</a>
-      </h2>
-      <div>
-        {{!-- Posted by {{User.username}} on {{format_date createdAt}} --}}
-      </div>
-    </div>
+  <div class="card">
+    <h3>
+      <a href="/game/{{id}}">{{game}}</a>
+    </h3>
     <div class="card-body">
       {{body}}
     </div>
-  </article>
+    <div class="bar">
+      <div class="emptybar"></div>
+      <div class="filledbar"></div>
+    </div>
+    <div class="circle">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <circle class="stroke" cx="60" cy="60" r="50" />
+      </svg>
+    </div>
+  </div>
   {{/each}}
 </div>
