@@ -20,24 +20,57 @@
     <link rel="stylesheet" href="/stylesheets/dashboard.css">
 
 
-    <title>Nexus</title>
-</head>
+    <div class="wrapper">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+      <span class="fs-4">Nexus</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <form class="d-flex nav-item search" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-danger" type="submit">Search</button>
+      </form>
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          <svg class="bi pe-none me-2" width="16" height="16">
+            <use xlink:href="#home"></use>
+          </svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white">
+          <svg class="bi pe-none me-2" width="16" height="16">
+            <use xlink:href="#speedometer2"></use>
+          </svg>
+          Dashboard
+        </a>
+      </li>
 
-<body>
-    <header>
-        <nav class="navbar">
-            <ul class='nav_links'>
-                <li><a href='/home' class='logo'>Nexus</a></li>
-                <a class='dashboard' href='/dashboard'><button>Dashboard</button></a>
-                <li>Welcome Back, {{user.name}}!</li>
-            </ul>
-        </nav>
-        <form id='content' class='hide'>
-            <input type='text' name='input' class='input' id='search-input' />
-            <button type='submit' class='search' id='search-btn'>Search</button>
-        </form>
-        <a id="logout" class='logout'><button>Logout</button></a>
-    </header>
+    </ul>
+    <hr>
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+        data-bs-toggle="dropdown" aria-expanded="false">
+        <img src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt="" width="32" height="32" class="rounded-circle me-2">
+        <strong>{{user.name}}</strong>
+      </a>
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <li><a class="dropdown-item" href="#">Liked Games</a></li>
+        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="#">Profile</a></li>
+        <li>
+          <hr class="dropdown-divider">
+        </li> 
+        <li><a class="dropdown-item" href="#">Sign out</a></li>
+      </ul>
+    </div>
+  </div>
+
 
    
         {{{body}}}
