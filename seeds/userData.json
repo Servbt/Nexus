@@ -1,27 +1,27 @@
 [
-    {
-      "name": "Sal",
-      "username": "sal2",
-      "password": "password12345"
-    },
-    {
-      "name": "Lernantino",
-      "username": "lernantino3",
-      "password": "password12345"
-    },
-    {
-      "name": "Amiko",
-      "username": "amiko2k20",
-      "password": "password12345"
-    },
-    {
-      "name": "Jordan",
-      "username": "jordan99",
-      "password": "password12345"
-    },
-    {
-      "name": "Blake",
-      "username": "the_blake",
-      "password": "password12345"
-    }
-  ]
+  {
+    "email": "sal@gmail.com",
+    "username": "sal2",
+    "password": "password12345"
+  },
+  {
+    "email": "lernantino@gmail.com",
+    "username": "lernantino3",
+    "password": "password12345"
+  },
+  {
+    "email": "amiko@gmail.com",
+    "username": "amiko2k20",
+    "password": "password12345"
+  },
+  {
+    "email": "jordan@gmail.com",
+    "username": "jordan99",
+    "password": "password12345"
+  },
+  {
+    "email": "blake@gmail.com",
+    "username": "the_blake",
+    "password": "password12345"
+  }
+]
