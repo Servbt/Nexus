@@ -18,13 +18,20 @@ router.get('/game/:id', async (req, res) => {
   }
 });
 
-router.get('/game/:game', async (req, res) => {
+router.get('/search/:game', async (req, res) => {
   try {
     let gameTitle = req.params.game;
     const gameData = await Game.findOne({
       where: {
         game: gameTitle,
-      }
+      }})
+          res.status(200).json(gameData);
+    // for rendering on handlebar
+    // res.render('game', { game });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
     });
 
 router.get("/", withAuth, (req, res) => {
