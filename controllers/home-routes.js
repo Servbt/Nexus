@@ -26,18 +26,6 @@ router.get('/signup', async (req, res) => {
   res.render('signup', { layout: 'signin.handlebars' });
 });
 
-// render home page
-router.get("/home", (req, res) => {
-  Game.findAll()
-    .then((dbData) => {
-      const games = dbData.map((game) => game.get({ plain: true }));
-
-      res.render("all-posts-new", { games });
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
-});
 
 router.get('/home', async (req, res) => {
   try {
@@ -51,7 +39,7 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    Game.findAll()
+    Game.findAll({limit:20})
     .then((dbData) => {
       const games = dbData.map((game) => game.get({ plain: true }));
 
