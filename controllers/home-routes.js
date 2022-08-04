@@ -1,5 +1,7 @@
 const router = require('express').Router();
+
 const { Game, User, Review, Tag } = require('../models');
+
 const withAuth = require('../utils/auth');
 // const {randomNumber} = require('../utils/helpers');
 const Sequelize = require('sequelize');
@@ -25,6 +27,18 @@ router.get('/signup', async (req, res) => {
 });
 
 // render home page
+router.get("/home", (req, res) => {
+  Game.findAll()
+    .then((dbData) => {
+      const games = dbData.map((game) => game.get({ plain: true }));
+
+      res.render("all-posts-new", { games });
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
 router.get('/home', async (req, res) => {
   try {
     if (!req.session.logged_in) {
@@ -37,35 +51,16 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    // RECOMMENDED
-    const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const recommendedGames = [];
+    Game.findAll()
+    .then((dbData) => {
+      const games = dbData.map((game) => game.get({ plain: true }));
 
-    recommendedIds.forEach(async (id) => {
-      const GameData = await Game.findByPk(id);
-      recommendedGames.push(GameData.dataValues);
-    });
-
-    // TOP CAROUSEL
-    // get number of Games in database
-    const GameNum = await Game.findAndCountAll();
-    const randomGames = [];
-
-    for (let i = 0; i < 6; i++) {
-      // get Game of random ids based on db length
-      const GameData = await Game.findByPk(randomNumber(GameNum.count));
-
-      // if Game doesn't have image_url, try again
-      if (GameData.dataValues.image_url === null) i--;
-      randomGames.push(GameData.dataValues);
-    }
-
-    res.render('homepage', {
-      user,
-      randomGames,
-      recommendedGames,
-      logged_in: req.session.logged_in,
-    });
+      res.render('all-posts-new', {
+        user,
+        games,
+        logged_in: req.session.logged_in,
+      })
+    })
   } catch (err) {
     res.status(500).json(err);
   }
@@ -120,21 +115,23 @@ router.get('/game/:id', async (req, res) => {
     });
     const game = gameData.get({ plain: true });
 
+
     res.status(200).json(game);
     // compare 'Game' to 'user.Games'\
     const userGameIds = user.Games.map((game) => Game.id);
     const hasGame = userGameIds.includes(Game.id);
 
-    const recommendedData = Game.recommended.slice(1, -1).split("', '");
-    const recommendedGames = recommendedData.map((element) =>
-      element.replace('"', '').replace("'", '').split('|')
-    );
+    // const recommendedData = same.recommended.slice(1, -1).split("', '");
+    // const recommendedGames = recommendedData.map((element) =>
+    //   element.replace('"', '').replace("'", '').split('|')
+    // );
+  
+          
 
     // render chosen Game page
-    res.render('chosenGame', {
+    res.render('single-game', {
       ...Game,
       hasGame,
-      recommendedGames,
       user,
       logged_in: req.session.logged_in,
     });
