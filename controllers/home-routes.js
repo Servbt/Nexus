@@ -43,7 +43,7 @@ router.get('/home', async (req, res) => {
     .then((dbData) => {
       const games = dbData.map((game) => game.get({ plain: true }));
 
-      res.render('all-posts-new', {
+      res.render('homepage', {
         user,
         games,
         logged_in: req.session.logged_in,
