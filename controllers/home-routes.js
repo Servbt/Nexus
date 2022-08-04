@@ -39,16 +39,16 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    Game.findAll({limit:20})
-    .then((dbData) => {
-      const games = dbData.map((game) => game.get({ plain: true }));
+    Game.findAll({ limit: 10 })
+      .then((dbData) => {
+        const games = dbData.map((game) => game.get({ plain: true }));
 
-      res.render('all-posts-new', {
-        user,
-        games,
-        logged_in: req.session.logged_in,
+        res.render('all-posts-new', {
+          user,
+          games,
+          logged_in: req.session.logged_in,
+        })
       })
-    })
   } catch (err) {
     res.status(500).json(err);
   }
@@ -96,29 +96,27 @@ router.get('/game/:id', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    const gameData = await Game.findByPk(req.params.id, {
-      include: [
-        { model: Review }, { model: User }, { model: Tag }
-      ]
-    });
+    const gameData = await Game.findByPk(req.params.id
+      //   , {
+      //   include: [
+      //     { model: Review }, { model: User }, { model: Tag }
+      //   ]
+      // }
+    );
     const game = gameData.get({ plain: true });
 
-
-    res.status(200).json(game);
     // compare 'Game' to 'user.Games'\
-    const userGameIds = user.Games.map((game) => Game.id);
-    const hasGame = userGameIds.includes(Game.id);
+    const userGameIds = user.games.map((game) => game.id);
+    const hasGame = userGameIds.includes(game.id);
 
     // const recommendedData = same.recommended.slice(1, -1).split("', '");
     // const recommendedGames = recommendedData.map((element) =>
     //   element.replace('"', '').replace("'", '').split('|')
     // );
-  
-          
 
     // render chosen Game page
     res.render('single-game', {
-      ...Game,
+      ...game,
       hasGame,
       user,
       logged_in: req.session.logged_in,
