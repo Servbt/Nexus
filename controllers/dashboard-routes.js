@@ -18,6 +18,15 @@ router.get('/game/:id', async (req, res) => {
   }
 });
 
+router.get('/game/:game', async (req, res) => {
+  try {
+    let gameTitle = req.params.game;
+    const gameData = await Game.findOne({
+      where: {
+        game: gameTitle,
+      }
+    });
+
 router.get("/", withAuth, (req, res) => {
     Post.findAll({
       where: {
