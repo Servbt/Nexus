@@ -1,22 +1,30 @@
-const loginFormHandler = async function(event) {
-    event.preventDefault();
-  
-    const usernameEl = document.querySelector("#username-input-login");
-    const passwordEl = document.querySelector("#password-input-login");
-    fetch("/api/user/login", {
-      method: "post",
-      body: JSON.stringify({
-        username: usernameEl.value,
-        password: passwordEl.value
-      }),
-      headers: { "Content-Type": "application/json" }
-    })
-      .then(function() {
-        document.location.replace("/dashboard");
-      })
-      .catch(err => console.log(err));
-  };
-  
-  document
-    .querySelector("#login-form")
-    .addEventListener("submit", loginFormHandler);
+// login logic
+const loginFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#name-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
+
+  if (name && password) {
+    // POST request to /api/user/login
+    const response = await fetch('/api/user/login', {
+      method: 'POST',
+      body: JSON.stringify({name, password}),
+      headers: {'Content-Type': 'application/json'},
+    });
+
+    console.log(response);
+
+    // good response sends user to homepage
+    if (response.ok) {
+      document.location.replace('/home');
+    } else {
+      console.log(response);
+      alert('Failed to log in');
+    }
+  }
+};
+
+document
+  .querySelector('.sign-in-htm')
+  .addEventListener('submit', loginFormHandler);

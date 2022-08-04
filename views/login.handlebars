@@ -1,19 +1,35 @@
-<div class="card">
-  <div class="card-header">
-    <h2>Login</h2>
+<div class="login-wrap">
+  <div class="login-html">
+    {{!-- toggle for sign-in/sign-up --}}
+    <div class ="col-lg-6 offset-lg-5">
+    <input id="tab-1" type="radio" name="tab" class="sign-in" checked /><a href="/login"  for="tab-1" class="tab">Log In</a>
+    <input id="tab-2" type="radio" name="tab" class="sign-up" /><a href="/signup" for="tab-2" class="tab">Sign Up</a>
+    </div>
+
+    {{!-- form wrapper --}}
+    <div class="login-form">
+
+        {{!-- sign-in --}}
+        <form id="sign-in-htm" class="sign-in-htm col-lg-6 offset-lg-3">
+            <div class="group">
+                <label for="name-login" class="label">Username</label>
+                <input id="name-login" type="text" class="input">
+            </div>
+            <div class="group">
+                <label for="password-login" class="label">Password</label>
+                <input id="password-login" type="password" class="input" data-type="password">
+            </div>
+            {{!-- <div class="group">
+                <input id="check" type="checkbox" class="check" checked>
+                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+            </div> --}}
+                <div class="group">
+                <button type="submit" class="button">Sign In</button>
+            </div>
+            <div class="hr"></div>
+        </form>
   </div>
-  <form id="login-form" class="card-body">
-    <div>
-      <label for="username-input-login">Username</label>
-      <input type="text" id="username-input-login" />
-    </div>
-    <div>
-      <label for="password-input-login" class="form-label">Password</label>
-      <input type="password" id="password-input-login" />
-    </div>
-    <button type="submit" id="login-btn" class="btn">Login!</button>
-    <a type="button" href="/signup">Sign up instead</a>
-  </form>
 </div>
+
 
 <script src="/javascript/login.js"></script>
