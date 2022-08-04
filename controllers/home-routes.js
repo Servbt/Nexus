@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const {Game, User} = require('../models');
+const { Game, User, Review, Tag } = require('../models');
 const withAuth = require('../utils/auth');
 // const {randomNumber} = require('../utils/helpers');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 router.get('/', async (req, res) => {
-  res.render('landingpage', {layout: 'landing.handlebars'});
+  res.render('landingpage', { layout: 'landing.handlebars' });
 });
 
 // render login page
@@ -16,12 +16,12 @@ router.get('/login', async (req, res) => {
     res.redirect('/home');
     return;
   }
-  res.render('login', {layout: 'signin.handlebars'});
+  res.render('login', { layout: 'signin.handlebars' });
 });
 
 // render signup page
 router.get('/signup', async (req, res) => {
-  res.render('signup', {layout: 'signin.handlebars'});
+  res.render('signup', { layout: 'signin.handlebars' });
 });
 
 // render home page
@@ -33,9 +33,9 @@ router.get('/home', async (req, res) => {
     }
     // USER INFO
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: {exclude: ['password']},
+      attributes: { exclude: ['password'] },
     });
-    const user = userData.get({plain: true});
+    const user = userData.get({ plain: true });
 
     // RECOMMENDED
     const recommendedIds = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -76,22 +76,22 @@ router.get('/search/:term', async (req, res) => {
   try {
     // get user info
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: {exclude: ['password']},
+      attributes: { exclude: ['password'] },
     });
-    const user = userData.get({plain: true});
+    const user = userData.get({ plain: true });
 
     const searchedTerm = req.params.term.replace('%20', '_');
     const GameData = await Game.findAll({
       where: {
         [Op.or]: [
-          {title: {[Op.like]: `%${req.params.term}%`}},
-          {author: {[Op.like]: `%${req.params.term}%`}},
-          {genre: {[Op.like]: `%${req.params.term}%`}},
+          { title: { [Op.like]: `%${req.params.term}%` } },
+          { author: { [Op.like]: `%${req.params.term}%` } },
+          { genre: { [Op.like]: `%${req.params.term}%` } },
         ],
       },
     });
 
-    const Games = GameData.map((Game) => Game.get({plain: true}));
+    const Games = GameData.map((Game) => Game.get({ plain: true }));
 
     res.render('search', {
       user,
@@ -105,19 +105,24 @@ router.get('/search/:term', async (req, res) => {
 });
 
 // render Game by id
-router.get('/Game/:id', async (req, res) => {
+router.get('/game/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: {exclude: ['password']},
-      include: [{model: Game}],
+      attributes: { exclude: ['password'] },
+      include: [{ model: Game }],
     });
-    const user = userData.get({plain: true});
+    const user = userData.get({ plain: true });
 
-    const GameData = await Game.findByPk(req.params.id);
-    const Game = GameData.get({plain: true});
+    const gameData = await Game.findByPk(req.params.id, {
+      include: [
+        { model: Review }, { model: User }, { model: Tag }
+      ]
+    });
+    const game = gameData.get({ plain: true });
 
+    res.status(200).json(game);
     // compare 'Game' to 'user.Games'\
-    const userGameIds = user.Games.map((Game) => Game.id);
+    const userGameIds = user.Games.map((game) => Game.id);
     const hasGame = userGameIds.includes(Game.id);
 
     const recommendedData = Game.recommended.slice(1, -1).split("', '");
@@ -142,9 +147,9 @@ router.get('/Game/:id', async (req, res) => {
 router.get('/category/:genre', async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: {exclude: ['password']},
+      attributes: { exclude: ['password'] },
     });
-    const user = userData.get({plain: true});
+    const user = userData.get({ plain: true });
 
     const categoryTitle = req.params.genre.toUpperCase().replace('_', ' ');
 
@@ -156,7 +161,7 @@ router.get('/category/:genre', async (req, res) => {
       },
     });
 
-    const categories = categoryData.map((Game) => Game.get({plain: true}));
+    const categories = categoryData.map((Game) => Game.get({ plain: true }));
 
     res.render('category', {
       user,
@@ -180,7 +185,7 @@ router.get('/user/:id', async (req, res) => {
       ],
     });
 
-    const user = userData.get({plain: true});
+    const user = userData.get({ plain: true });
 
     res.render('user', {
       ...user,
