@@ -84,7 +84,7 @@ var getGameImage = function (gameSearched) {
 
 function displayGame(coverArt) {
 
-  let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+  let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x200.jpg`;
   console.log(gameImage);
   cover.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
 }
