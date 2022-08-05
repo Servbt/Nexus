@@ -5,16 +5,14 @@ const { randomNumber } = require('../../utils/helper');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
-
-// Get game by searching for title, genre, or platform
-router.get('/search/:input', async (req, res) => {
+// Get game by searching for title or genre
+router.get('/search/:term', async (req, res) => {
   try {
     const gameData = await Game.findAll({
       where: {
         [Op.or]: [
-          { game: { [Op.like]: `%${req.params.input}%` } },
-          { genre: { [Op.like]: `%${req.params.input}%` } },
-          { platform: { [Op.like]: `%${req.params.input}%` } },
+          { game: { [Op.like]: `%${req.params.term}%` } },
+          { genre: { [Op.like]: `%${req.params.term}%` } },
         ],
       },
     });
