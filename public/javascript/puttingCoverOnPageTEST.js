@@ -1,5 +1,13 @@
-const searchBtn = document.getElementById("searchBtn");
+let searchBtn = document.getElementById("searchBtn");
 const userInput = document.getElementById("search");
+
+// $(document).ready(function() {
+//   $('#submit').click(function() {
+//       var text = $('a').text();
+//       console.log(text);
+//   })
+// });
+
 let cover = document.getElementById("gameCover");
 
 console.log("testing testing testing");
@@ -73,9 +81,10 @@ var getGameImage = function (gameSearched) {
 
 });
 
+
 function displayGame(coverArt) {
 
-  let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+  let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x200.jpg`;
   console.log(gameImage);
   cover.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
 }

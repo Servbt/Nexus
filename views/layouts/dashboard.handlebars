@@ -1,37 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!-- Main Dashboard -->
+    <div class="container-fluid">
+      <div class="row">
+      
+  
+        <section class="Games-list">
+          <main>
+            <div class="chartjs-size-monitor">
+              <div class="chartjs-size-monitor-expand">
+                <div class=""></div>
+              </div>
+              <div class="chartjs-size-monitor-shrink">
+                <div class=""></div>
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+            >
+              <h1 class="h2" id="dash-title">Dashboard</h1>
+              <div class="btn-toolbar mb-2 mb-md-0"></div>
+            </div>
+          </main>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+          <div class="game-database">
+            <div class="container-fluid">
+                {{#each user.Games as |Game|}}
+                <a href="/Game/{{Game.id}}"><img src="{{Game.image_url}}" alt=""></a>
+                {{/each}}
+            </div>
 
-<body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul class="flex-row">
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-    </ul>
-  </nav>
-  <header class="hero">
-    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
-  </header>
+          </div>
+        </section>
+      </div>
+    </div>
 
-  <main class="col-auto">
-    {{{body}}}
-  </main>
-
-  <footer class="footer flex-row justify-center">
-    <a href="/dashboard/new">➕ New Post</a>
-  </footer>
-</body>
-
-<script src="/javascript/logout.js"></script>
-<script src="/javascript/edit.js"></script>
-<script src="/javascript/delete.js"></script>
-
-</html>
+<script src="/javascript/dashboard.js"></script>

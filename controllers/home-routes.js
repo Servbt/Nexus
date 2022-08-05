@@ -39,11 +39,18 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    Game.findAll({limit:20})
-    .then((dbData) => {
-      const games = dbData.map((game) => game.get({ plain: true }));
+    
 
-      res.render('all-posts-new', {
+    Game.findAll({ offset: 120, limit: 20, })
+    
+    .then((dbData) => {
+      
+      const games = dbData.map((game) => game.get({ plain: true })) ;
+    
+
+      
+  
+      res.render('homepage', {
         user,
         games,
         logged_in: req.session.logged_in,
