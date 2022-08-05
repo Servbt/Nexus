@@ -1,0 +1,77 @@
+
+  <div class="content">
+
+    
+    <ul class="nav nav-pills nav-justified">
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="#">Action</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="#">Survival</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="#">Battle</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="#">Racing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="#">Virtual Reality</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="#"> Adventure</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "aria-current="page" href="#" >Sport</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "aria-current="page" href="#" >Horror</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link "aria-current="page" href="#" >Strategy</a>
+      </li>
+    </ul>
+
+    <div>
+      <h1>Welcome Back, <br> {{user.name}}! </h1>
+    </div>
+  </div>
+ <div class="container autoplay">
+  {{#each games}}
+  <div class="card">
+    <h3 id="gamename">
+      <a href="/game/{{id}}">{{game}}</a>
+    </h3>
+<div id="gameCover"></div>
+    
+    
+    <div class="card-body">
+      {{!-- {{body}} --}} 
+    </div>
+    <div class="bar">
+      <div class="emptybar"></div>
+      <div class="filledbar"></div>
+    </div>
+    <div class="circle">
+     
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
+  <script rel='stylesheet' type="text/javascript" src="../public/stylesheets/dashboard.css"></script>
+  <script src="/javascript/home-page.js"></script>
+ 
+  
+
+
+
+

@@ -39,28 +39,37 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    //generating random 10 games
-    const gameNum = await Game.findAndCountAll();
-    const randomGames = [];
 
-    for (let i = 0; i < 10; i++) {
-      const gameData = await Game.findByPk(randomNumber(gameNum.count));
-      randomGames.push(gameData.dataValues);
-    }
-    res.render('all-posts-new', {
-      user,
-      randomGames,
-      logged_in: req.session.logged_in,
-    });
-    // Game.findAll({ limit: 10 })
-    //   .then((dbData) => {
-    //     const games = dbData.map((game) => game.get({ plain: true }));
+    Game.findAll({ offset: 120, limit: 20, })
+    
+    .then((dbData) => {
+      
+      const games = dbData.map((game) => game.get({ plain: true })) ;
+    
 
+      
+  
+      res.render('homepage', {
+        user,
+        games,
+        logged_in: req.session.logged_in,
+      })
+    })
+
+    // //generating random 10 games
+    // const gameNum = await Game.findAndCountAll();
+    // const randomGames = [];
+
+    // for (let i = 0; i < 10; i++) {
+    //   const gameData = await Game.findByPk(randomNumber(gameNum.count));
+    //   randomGames.push(gameData.dataValues);
+    // }
     // res.render('all-posts-new', {
     //   user,
-    //   games,
+    //   randomGames,
     //   logged_in: req.session.logged_in,
-    // })
+    // });
+  
 
   } catch (err) {
     res.status(500).json(err);
