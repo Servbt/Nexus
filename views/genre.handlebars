@@ -1,19 +1,20 @@
-<section class="categories">
-  <div class="category-header">
-    <h1>{{genreTitle}}</h1>
-  </div>
-</section>
-
-{{#if genres}}
-<section class="home" id="home">
-  <div class="container-fluid">
-    <div class="row">
-      {{#each genres as |game|}}
-      {{> genre-details}}
-      {{/each}}
+<div>
+  <section class="categories">
+    <div class="category-header">
+      <h1>{{genreTitle}}</h1>
     </div>
-  </div>
-  </div>
+  </section>
+
+  {{#if genres}}
+  <section class="home" id="home">
+    <div class="container-fluid">
+      <div class="row">
+        {{#each genres as |game|}}
+        {{> genre-details}}
+        {{/each}}
+      </div>
+    </div>
+</div>
 </section>
 
 {{else}}
@@ -24,3 +25,5 @@
   </div>
 </div>
 {{/if}}
+
+</div>
