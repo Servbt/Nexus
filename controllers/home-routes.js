@@ -80,8 +80,7 @@ router.get('/search/:term', async (req, res) => {
     const gameData = await Game.findAll({
       where: {
         [Op.or]: [
-          { title: { [Op.like]: `%${req.params.term}%` } },
-          { author: { [Op.like]: `%${req.params.term}%` } },
+          { game: { [Op.like]: `%${req.params.term}%` } },
           { genre: { [Op.like]: `%${req.params.term}%` } },
         ],
       },
