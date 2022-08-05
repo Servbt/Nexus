@@ -19,6 +19,16 @@ const game7 = document.querySelector('[href="/game/127"]')
 const game8 = document.querySelector('[href="/game/128"]')
 const game9 = document.querySelector('[href="/game/129"]')
 const game10 = document.querySelector('[href="/game/130"]')
+const game11 = document.querySelector('[href="/game/131"]')
+const game12 = document.querySelector('[href="/game/132"]')
+const game13 = document.querySelector('[href="/game/133"]')
+const game14 = document.querySelector('[href="/game/134"]')
+const game15 = document.querySelector('[href="/game/135"]')
+const game16 = document.querySelector('[href="/game/136"]')
+const game17 = document.querySelector('[href="/game/137"]')
+const game18 = document.querySelector('[href="/game/138"]')
+const game19 = document.querySelector('[href="/game/139"]')
+const game20 = document.querySelector('[href="/game/140"]')
 
 let cover = document.getElementById("gameCover");
 
@@ -35,6 +45,16 @@ let gamename = document.getElementById("gamename");
     var apiUrl8 = `https://api.twitch.tv/helix/games?name=${game8.innerText}`
     var apiUrl9 = `https://api.twitch.tv/helix/games?name=${game9.innerText}`
     var apiUrl10 = `https://api.twitch.tv/helix/games?name=${game10.innerText}`
+    var apiUrl11 = `https://api.twitch.tv/helix/games?name=${game11.innerText}`
+    var apiUrl12 = `https://api.twitch.tv/helix/games?name=${game12.innerText}`
+    var apiUrl13 = `https://api.twitch.tv/helix/games?name=${game13.innerText}`
+    var apiUrl14 = `https://api.twitch.tv/helix/games?name=${game14.innerText}`
+    var apiUrl15 = `https://api.twitch.tv/helix/games?name=${game15.innerText}`
+    var apiUrl16 = `https://api.twitch.tv/helix/games?name=${game16.innerText}`
+    var apiUrl17 = `https://api.twitch.tv/helix/games?name=${game17.innerText}`
+    var apiUrl18 = `https://api.twitch.tv/helix/games?name=${game18.innerText}`
+    var apiUrl19 = `https://api.twitch.tv/helix/games?name=${game19.innerText}`
+    var apiUrl20 = `https://api.twitch.tv/helix/games?name=broken age`
 
     function getGameImage() {
     fetch(apiUrl1, {  
@@ -242,12 +262,219 @@ let gamename = document.getElementById("gamename");
                                 }
                             })
                         }
-                                  
+
+
+function getGameImage11() {
+    fetch(apiUrl11, {  
+      method: "GET",
+      headers: {
+        "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+        "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+      }
+    })
+    .then(function (response) {
+        if (response.ok) {
+            console.log(response);
+                response.json().then(function (data) {
+                    console.log(data);
+                        displayGame11(data.data[0].id)
+                
+                    
+                })
+            }
+        })
+    }
+
+    function getGameImage12() {
+        fetch(apiUrl12, {  
+          method: "GET",
+          headers: {
+            "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+            "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+          }
+        })
+        .then(function (response) {
+            if (response.ok) {
+                console.log(response);
+                    response.json().then(function (data) {
+                        console.log(data);
+                            displayGame12(data.data[0].id)
+                    
+                        
+                    })
+                }
+            })
+        }
+
+        function getGameImage13() {
+            fetch(apiUrl13, {  
+              method: "GET",
+              headers: {
+                "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+                "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+              }
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    console.log(response);
+                        response.json().then(function (data) {
+                            console.log(data);
+                                displayGame13(data.data[0].id)
+                        
+                            
+                        })
+                    }
+                })
+            }
+
+           function getGameImage14() {
+        fetch(apiUrl14, {  
+          method: "GET",
+          headers: {
+            "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+            "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+          }
+        })
+        .then(function (response) {
+            if (response.ok) {
+                console.log(response);
+                    response.json().then(function (data) {
+                        console.log(data);
+                            displayGame14(data.data[0].id)
+                    
+                        
+                    })
+                }
+            })
+        }
+        function getGameImage15() {
+            fetch(apiUrl15, {  
+              method: "GET",
+              headers: {
+                "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+                "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+              }
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    console.log(response);
+                        response.json().then(function (data) {
+                            console.log(data);
+                                displayGame15(data.data[0].id)
+                        
+                            
+                        })
+                    }
+                })
+            }
+                 
+            function getGameImage16() {
+                fetch(apiUrl16, {  
+                  method: "GET",
+                  headers: {
+                    "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+                    "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                  }
+                })
+                .then(function (response) {
+                    if (response.ok) {
+                        console.log(response);
+                            response.json().then(function (data) {
+                                console.log(data);
+                                    displayGame16(data.data[0].id)
+                            
+                                
+                            })
+                        }
+                    })
+                }
+            
+                function getGameImage17() {
+                    fetch(apiUrl17, {  
+                      method: "GET",
+                      headers: {
+                        "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+                        "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                      }
+                    })
+                    .then(function (response) {
+                        if (response.ok) {
+                            console.log(response);
+                                response.json().then(function (data) {
+                                    console.log(data);
+                                        displayGame17(data.data[0].id)
+                                
+                                    
+                                })
+                            }
+                        })
+                    }
+            
+                    function getGameImage18() {
+                        fetch(apiUrl18, {  
+                          method: "GET",
+                          headers: {
+                            "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+                            "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                          }
+                        })
+                        .then(function (response) {
+                            if (response.ok) {
+                                console.log(response);
+                                    response.json().then(function (data) {
+                                        console.log(data);
+                                            displayGame18(data.data[0].id)
+                                    
+                                        
+                                    })
+                                }
+                            })
+                        }
+                       function getGameImage19() {
+                    fetch(apiUrl19, {  
+                      method: "GET",
+                      headers: {
+                        "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+                        "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                      }
+                    })
+                    .then(function (response) {
+                        if (response.ok) {
+                            console.log(response);
+                                response.json().then(function (data) {
+                                    console.log(data);
+                                        displayGame19(data.data[0].id)
+                                
+                                    
+                                })
+                            }
+                        })
+                    }
+                    function getGameImage20() {
+                        fetch(apiUrl20, {  
+                          method: "GET",
+                          headers: {
+                            "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+                            "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                          }
+                        })
+                        .then(function (response) {
+                            if (response.ok) {
+                                console.log(response);
+                                    response.json().then(function (data) {
+                                        console.log(data);
+                                            displayGame20(data.data[0].id)
+                                    
+                                        
+                                    })
+                                }
+                            })
+                        }
+                                           
             
             
 
- 
-   function displayGame(coverArt) {
+function displayGame(coverArt) {
 
     let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
 
@@ -336,6 +563,96 @@ let gamename = document.getElementById("gamename");
   }
 
 
+ 
+   function displayGame11(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game11.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+  function displayGame12(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game12.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+  function displayGame13(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game13.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+  function displayGame14(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game14.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+  function displayGame15(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game15.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+  function displayGame16(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game16.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+  function displayGame17(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game17.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+  function displayGame18(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game18.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+  function displayGame19(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game19.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+  function displayGame20(coverArt) {
+
+    let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+
+    
+    game20.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+    
+  }
+
+
   getGameImage(game1)
     getGameImage2(game2)
     getGameImage3(game3)
@@ -346,6 +663,16 @@ let gamename = document.getElementById("gamename");
     getGameImage8(game8)
     getGameImage9(game9)
     getGameImage10(game10)
+    getGameImage11(game11)
+    getGameImage12(game12)
+    getGameImage13(game13)
+    getGameImage14(game14)
+    getGameImage15(game15)
+    getGameImage16(game16)
+    getGameImage17(game17)
+    getGameImage18(game18)
+    getGameImage19(game19)
+    getGameImage20(game20)
     // getGameImage(gamename)
   
 //   function displayGame(coverArt) {
