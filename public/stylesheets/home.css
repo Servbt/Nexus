@@ -5,9 +5,12 @@
 .sidebar {
     max-height: 100vh;
     min-height: 100vh;
+    background: rgb(38,37,40);
+background: linear-gradient(180deg, rgba(38,37,40,1) 5%, rgba(32,31,35,1) 26%, rgba(16,14,23,1) 65%);
 }
 body {
-    background-color: #100e17;
+  background: rgb(32,29,43);
+  background: radial-gradient(circle, rgba(32,29,43,1) 16%, rgba(16,14,23,1) 67%);
     font-family: 'Open Sans', sans-serif;
   }
   
@@ -19,7 +22,7 @@ body {
     left: calc(60% - 300px);
     display: flex;
   }
-  
+ 
   .card {
     display: flex;
     height: 280px;
@@ -70,12 +73,12 @@ body {
     top: 15px;
   }
   
-  .bar {
+  /* .bar:hover {
     position: absolute;
     top: 100px;
     left: 20px;
     height: 5px;
-    width: 150px;
+    width: 125px;
   }
   
   .emptybar {
@@ -90,10 +93,10 @@ body {
     z-index: 3;
     width: 0px;
     height: 100%;
-    background: rgb(0,154,217);
+    background: rgb(255, 255, 255);
     background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
     transition: 0.6s ease-out;
-  }
+  } */
   
   .card:hover .filledbar {
     width: 120px;
@@ -126,13 +129,32 @@ body {
     margin-bottom: 20px;
   }
 
+  .nav a:link {
+    text-decoration: none;
+}
+  .nav a:hover {
+    text-decoration: none;
+}
+  .nav a {
+    padding-top: 15px;
+    font-size: 20px;
+  }
+
   .nav-pills .nav-link.active {
+    background-color: red;
+  }
+  .nav-pills .nav-link:hover{
     background-color: red;
   }
 h1 {
   color:rgba(255, 0, 0, 0.925);
   justify-content:end;
+  padding-left: 60px;
+  padding-top: 40px;
   margin-left: 20px;
+  font-size: 30px;
+  text-transform: capitalize;
+  filter: drop-shadow(10px 10px 4px #000000);
 }
 .nav-link {
   color: rgb(253, 253, 253);
