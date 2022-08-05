@@ -41,9 +41,10 @@ router.get('/home', async (req, res) => {
 
     
 
-    Game.findAll({limit:20})
+    Game.findAll({ offset: 120, limit: 20, })
+    
     .then((dbData) => {
-
+      
       const games = dbData.map((game) => game.get({ plain: true })) ;
     
 

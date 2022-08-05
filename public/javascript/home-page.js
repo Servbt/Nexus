@@ -4,21 +4,21 @@ $(document).ready(function(){
       slidesToShow: 4,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 9000,
+      autoplaySpeed: 6000,
     });
 });
 
  
-const game1 = document.querySelector('[href="/game/1"]')
-const game2 = document.querySelector('[href="/game/2"]')
-const game3 = document.querySelector('[href="/game/3"]')
-const game4 = document.querySelector('[href="/game/4"]')
-const game5 = document.querySelector('[href="/game/5"]')
-const game6 = document.querySelector('[href="/game/6"]')
-const game7 = document.querySelector('[href="/game/7"]')
-const game8 = document.querySelector('[href="/game/8"]')
-const game9 = document.querySelector('[href="/game/9"]')
-const game10 = document.querySelector('[href="/game/10"]')
+const game1 = document.querySelector('[href="/game/121"]')
+const game2 = document.querySelector('[href="/game/122"]')
+const game3 = document.querySelector('[href="/game/123"]')
+const game4 = document.querySelector('[href="/game/124"]')
+const game5 = document.querySelector('[href="/game/125"]')
+const game6 = document.querySelector('[href="/game/126"]')
+const game7 = document.querySelector('[href="/game/127"]')
+const game8 = document.querySelector('[href="/game/128"]')
+const game9 = document.querySelector('[href="/game/129"]')
+const game10 = document.querySelector('[href="/game/130"]')
 
 let cover = document.getElementById("gameCover");
 
