@@ -1,0 +1,27 @@
+{{!-- categories --}}
+<section class="categories">
+  <div class="category-header">
+    <h1>Results for: {{searchedTerm}}</h1>
+  </div>
+</section>
+
+{{!-- content --}}
+
+<section class="home" id="home">
+  <div class="container-fluid">
+    <div class="row">
+      {{#each games as |game|}}
+      <div class="col" id="details">
+        <a href="/book/{{game.id}}">
+          <img src="{{game.image_url}}" alt="" />
+        </a>
+        <h1>{{game.game}}</h1>
+        <h2>{{game.platform}}</h2>
+        <h3>{{game.score}}/10</h3>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="./javascript/search.js"></script>
