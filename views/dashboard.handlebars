@@ -1,0 +1,5 @@
+<div class="container-fluid">
+  {{#each user.games as |game|}}
+  <a href='/game/{{game.id}}'><img src="game.image_url" alt="game.title cover" </a>
+    {{/each}}
+</div>

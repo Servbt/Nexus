@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { Game, User, Review, Tag } = require('../models');
 
 const withAuth = require('../utils/auth');
-// const {randomNumber} = require('../utils/helpers');
+const { randomNumber } = require('../utils/helper');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
@@ -39,7 +39,6 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    
 
     Game.findAll({ offset: 120, limit: 20, })
     
@@ -56,6 +55,22 @@ router.get('/home', async (req, res) => {
         logged_in: req.session.logged_in,
       })
     })
+
+    // //generating random 10 games
+    // const gameNum = await Game.findAndCountAll();
+    // const randomGames = [];
+
+    // for (let i = 0; i < 10; i++) {
+    //   const gameData = await Game.findByPk(randomNumber(gameNum.count));
+    //   randomGames.push(gameData.dataValues);
+    // }
+    // res.render('all-posts-new', {
+    //   user,
+    //   randomGames,
+    //   logged_in: req.session.logged_in,
+    // });
+  
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -71,22 +86,21 @@ router.get('/search/:term', async (req, res) => {
     const user = userData.get({ plain: true });
 
     const searchedTerm = req.params.term.replace('%20', '_');
-    const GameData = await Game.findAll({
+    const gameData = await Game.findAll({
       where: {
         [Op.or]: [
-          { title: { [Op.like]: `%${req.params.term}%` } },
-          { author: { [Op.like]: `%${req.params.term}%` } },
+          { game: { [Op.like]: `%${req.params.term}%` } },
           { genre: { [Op.like]: `%${req.params.term}%` } },
         ],
       },
     });
 
-    const Games = GameData.map((Game) => Game.get({ plain: true }));
+    const games = gameData.map((game) => game.get({ plain: true }));
 
     res.render('search', {
       user,
       searchedTerm,
-      Games,
+      games,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -103,29 +117,27 @@ router.get('/game/:id', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    const gameData = await Game.findByPk(req.params.id, {
-      include: [
-        { model: Review }, { model: User }, { model: Tag }
-      ]
-    });
+    const gameData = await Game.findByPk(req.params.id
+      //   , {
+      //   include: [
+      //     { model: Review }, { model: User }, { model: Tag }
+      //   ]
+      // }
+    );
     const game = gameData.get({ plain: true });
 
-
-    res.status(200).json(game);
     // compare 'Game' to 'user.Games'\
-    const userGameIds = user.Games.map((game) => Game.id);
-    const hasGame = userGameIds.includes(Game.id);
+    const userGameIds = user.games.map((game) => game.id);
+    const hasGame = userGameIds.includes(game.id);
 
     // const recommendedData = same.recommended.slice(1, -1).split("', '");
     // const recommendedGames = recommendedData.map((element) =>
     //   element.replace('"', '').replace("'", '').split('|')
     // );
-  
-          
 
     // render chosen Game page
     res.render('single-game', {
-      ...Game,
+      ...game,
       hasGame,
       user,
       logged_in: req.session.logged_in,
@@ -136,29 +148,30 @@ router.get('/game/:id', async (req, res) => {
 });
 
 // Get Game by Genre
-router.get('/category/:genre', async (req, res) => {
+router.get('/genre/:genre', async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
     });
     const user = userData.get({ plain: true });
 
-    const categoryTitle = req.params.genre.toUpperCase().replace('_', ' ');
+    const genreTitle = req.params.genre.toUpperCase().replace('_', ' ');
 
-    const categoryData = await Game.findAll({
+    const genreData = await Game.findAll({
       where: {
         genre: {
           [Op.like]: `%${req.params.genre}%`,
         },
       },
+      order: [['game', 'ASC']]
     });
 
-    const categories = categoryData.map((Game) => Game.get({ plain: true }));
+    const genres = genreData.map((game) => game.get({ plain: true }));
 
-    res.render('category', {
+    res.render('genre', {
       user,
-      categories,
-      categoryTitle,
+      genres,
+      genreTitle,
     });
   } catch (err) {
     res.status(500).json(err);

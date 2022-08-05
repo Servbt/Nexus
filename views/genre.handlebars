@@ -1,0 +1,26 @@
+<section class="categories">
+  <div class="category-header">
+    <h1>{{genreTitle}}</h1>
+  </div>
+</section>
+
+{{#if genres}}
+<section class="home" id="home">
+  <div class="container-fluid">
+    <div class="row">
+      {{#each genres as |game|}}
+      {{> genre-details}}
+      {{/each}}
+    </div>
+  </div>
+  </div>
+</section>
+
+{{else}}
+<div class="container-fluid justify-content-center">
+  <div class="row">
+    <h2>Sorry, there are no games in this genre.
+    </h2>
+  </div>
+</div>
+{{/if}}

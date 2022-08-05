@@ -1,8 +1,8 @@
 <div class="container autoplay">
-  {{#each games}}
+  {{#each randomGames as |game|}}
   <div class="card">
     <h3>
-      <a href="/game/{{id}}">{{game}}</a>
+      <a href="/game/{{game.id}}">{{game.game}}</a>
     </h3>
     <div class="card-body">
       {{body}}
