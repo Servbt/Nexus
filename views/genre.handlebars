@@ -1,28 +1,26 @@
-<!-- Categories Section  -->
-
 <section class="categories">
   <div class="category-header">
     <h1>{{genreTitle}}</h1>
   </div>
 </section>
 
-<!-- Jumbotron Section  -->
-
+{{#if genres}}
 <section class="home" id="home">
   <div class="container-fluid">
     <div class="row">
       {{#each genres as |game|}}
-      <div class="col" id="details">
-        <a href="/book/{{game.id}}">
-          <img src="{{game.image_url}}" alt="">
-        </a>
-        <h1>{{game.game}}</h1>
-        <h2>{{game.platform}}</h2>
-        <h3>{{game.score}}/5</h3>
-        {{/each}}
-      </div>
+      {{> genre-details}}
+      {{/each}}
     </div>
+  </div>
   </div>
 </section>
 
-<script src="/js/category.js"></script>
+{{else}}
+<div class="container-fluid justify-content-center">
+  <div class="row">
+    <h2>Sorry, there are no games in this genre.
+    </h2>
+  </div>
+</div>
+{{/if}}

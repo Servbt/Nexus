@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { Game, User, Review, Tag } = require('../models');
 
 const withAuth = require('../utils/auth');
-// const {randomNumber} = require('../utils/helpers');
+const { randomNumber } = require('../utils/helper');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
@@ -39,16 +39,29 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    Game.findAll({ limit: 10 })
-      .then((dbData) => {
-        const games = dbData.map((game) => game.get({ plain: true }));
+    //generating random 10 games
+    const gameNum = await Game.findAndCountAll();
+    const randomGames = [];
 
-        res.render('all-posts-new', {
-          user,
-          games,
-          logged_in: req.session.logged_in,
-        })
-      })
+    for (let i = 0; i < 10; i++) {
+      const gameData = await Game.findByPk(randomNumber(gameNum.count));
+      randomGames.push(gameData.dataValues);
+    }
+    res.render('all-posts-new', {
+      user,
+      randomGames,
+      logged_in: req.session.logged_in,
+    });
+    // Game.findAll({ limit: 10 })
+    //   .then((dbData) => {
+    //     const games = dbData.map((game) => game.get({ plain: true }));
+
+    // res.render('all-posts-new', {
+    //   user,
+    //   games,
+    //   logged_in: req.session.logged_in,
+    // })
+
   } catch (err) {
     res.status(500).json(err);
   }
@@ -142,6 +155,7 @@ router.get('/genre/:genre', async (req, res) => {
           [Op.like]: `%${req.params.genre}%`,
         },
       },
+      order: [['game', 'ASC']]
     });
 
     const genres = genreData.map((game) => game.get({ plain: true }));
