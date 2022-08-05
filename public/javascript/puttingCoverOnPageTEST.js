@@ -1,5 +1,13 @@
-const searchBtn = document.getElementById("searchBtn");
+let searchBtn = document.getElementById("searchBtn");
 const userInput = document.getElementById("search");
+
+// $(document).ready(function() {
+//   $('#submit').click(function() {
+//       var text = $('a').text();
+//       console.log(text);
+//   })
+// });
+
 let cover = document.getElementById("gameCover");
 
 console.log("testing testing testing");
@@ -72,6 +80,7 @@ var getGameImage = function (gameSearched) {
 
 
 });
+
 
 function displayGame(coverArt) {
 

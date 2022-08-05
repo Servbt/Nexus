@@ -39,9 +39,12 @@ router.get('/home', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
+    
+
     Game.findAll({limit:50})
     .then((dbData) => {
       const games = dbData.map((game) => game.get({ plain: true }));
+      
 
       res.render('homepage', {
         user,

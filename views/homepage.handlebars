@@ -39,11 +39,14 @@
  <div class="container autoplay">
   {{#each games}}
   <div class="card">
-    <h3>
+    <h3 id="gamename">
       <a href="/game/{{id}}">{{game}}</a>
     </h3>
+<div id="gameCover"></div>
+    
+    
     <div class="card-body">
-      {{body}}
+      {{!-- {{body}} --}} 
     </div>
     <div class="bar">
       <div class="emptybar"></div>
@@ -68,6 +71,8 @@
 
   <script rel='stylesheet' type="text/javascript" src="../public/stylesheets/dashboard.css"></script>
   <script src="/javascript/home-page.js"></script>
+ 
+  
 
 
 
