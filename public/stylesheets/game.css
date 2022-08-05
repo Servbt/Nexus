@@ -11,6 +11,12 @@ body {
   flex-wrap: wrap;
 }
 
+.container {
+display: grid;
+grid-template-columns: 60% 40%;
+margin-top: 20px;
+}
+
 .item {
   width: 33.33%;
   min-height: 1px;
