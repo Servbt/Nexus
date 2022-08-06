@@ -12,9 +12,9 @@ body {
 }
 
 .container {
-display: grid;
-grid-template-columns: 60% 40%;
-margin-top: 20px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-top: 20px;
 }
 
 .item {
@@ -286,6 +286,6 @@ margin-top: 20px;
   transition: .3s background ease, .3s border ease;
   -webkit-transform: skew(-7deg);
   -ms-transform: skew(-7deg);
-      transform: skew(-7deg);
+  transform: skew(-7deg);
   z-index: -1;
 }
