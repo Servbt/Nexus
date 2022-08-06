@@ -215,8 +215,9 @@ h2 {
 footer {
   color: rgba(128, 128, 128, 0.164);
   display: flex;
+  align-content: center;
   position: relative;
-  justify-content: start;
+  justify-content: center;
   margin-left: 4rem;
   margin-top: 10px;
   padding-bottom: 1px;
