@@ -7,6 +7,12 @@
   color: rgb(255, 255, 255);
   font-size: 20px;
   font-weight: lighter;
+  text-decoration: none;
+  list-style:disc;
+}
+
+.SIGNOUT:hover {
+  color: red;
 }
 
 .wrapper {
@@ -130,10 +136,15 @@ svg {
   text-decoration: none;
   color: white;
 }
+.content .nav.nav-pills.nav-justified {
+  background-color: rgba(0, 0, 0, 0.151);
+  padding-bottom: 5px;
+}
 
 .nav a {
   padding-top: 15px;
   font-size: 20px;
+  font-weight: lighter;
 }
 
 .nav-pills .nav-link.active {
