@@ -5,3 +5,12 @@
 .h3-color {
   color: gray;
 }
+
+.bc-bg {
+  background-color: orangered;
+  opacity: 75;
+}
+
+.bc-bg a {
+  color: white;
+}
