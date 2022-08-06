@@ -3,17 +3,14 @@ const Game = require('./Game');
 const Review = require('./Review');
 const Tag = require('./Tag');
 
-// User.hasMany(Game, {
-//   foreignKey: 'game_id',
-//   onDelete: 'CASCADE'
-// });
-
 Game.belongsToMany(User, {
-  through: Tag
+  through: Tag,
+  unique: false,
 });
 
 User.belongsToMany(Game, {
-  through: Tag
+  through: Tag,
+  unique: false
 });
 
 Review.belongsTo(User, {
