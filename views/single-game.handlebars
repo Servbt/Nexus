@@ -1,41 +1,53 @@
-<section class="categories">
-  <div class="category-header">
-    <h2>{{game}}</h2>
-    <h5>{{genre}}</h5>
-    <h5>{{platform}}</h5>
-  </div>
-</section>
+<div>
+  <!--breadcrumbs-->
+  <nav
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/home">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href='/game/{{id}}'>Game: {{game}}</a></li>
+    </ol>
+  </nav>
 
-<section class="card">
-  <div class="card-header">
-    <h3>Reviews</h3>
-  </div>
-
-  <div class="card-body">
-
-    <div>
-      <p>
-        {{!-- {{body}} --}}
-      </p>
-      <p>
-
-      </p>
+  <section class="categories">
+    <div class="category-header">
+      <h2>{{game}}</h2>
+      <h5>{{genre}}</h5>
+      <h5>{{platform}}</h5>
     </div>
-  </div>
-</section>
+  </section>
 
-<form id="new-comment-form" class="card">
-  <div class="card-header">
-    <h3>Add A New Review</h3>
-  </div>
+  <section class="card">
+    <div class="card-header">
+      <h3>Reviews</h3>
+    </div>
 
-  <div class="card-body">
-    <input type="hidden" name="post-id" value="{{id}}" />
+    <div class="card-body">
 
-    <label class="form-label" for="comment-body">Review</label>
+      <div>
+        <p>
+          {{!-- {{body}} --}}
+        </p>
+        <p>
 
-    <textarea name="comment-body" class="form-input"></textarea>
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <button type="submit" class="btn">Submit</button>
-  </div>
-</form>
+  <form id="new-comment-form" class="card">
+    <div class="card-header">
+      <h3>Add A New Review</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" name="post-id" value="{{id}}" />
+
+      <label class="form-label" for="comment-body">Review</label>
+
+      <textarea name="comment-body" class="form-input"></textarea>
+
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</div>

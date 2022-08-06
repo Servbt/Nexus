@@ -1,27 +1,39 @@
-{{!-- categories --}}
-<section class="categories">
-  <div class="category-header">
-    <h1>Results for: {{searchedTerm}}</h1>
-  </div>
-</section>
+<div>
+  <!--Breadcrumbs-->
+  <nav
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/home">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page"><a href='/search/{{searchedTerm}}'>Search:
+          {{searchedTerm}}</a></li>
+    </ol>
+  </nav>
 
-{{!-- content --}}
+  {{!-- categories --}}
+  <section class="categories">
+    <div class="category-header">
+      <h1>Results for: {{searchedTerm}}</h1>
+    </div>
+  </section>
 
-<section class="home" id="home">
-  <div class="container-fluid">
-    <div class="row">
-      {{#each games as |game|}}
-      <div class="col" id="details">
-        <a href="/book/{{game.id}}">
-          <img src="{{game.image_url}}" alt="" />
-        </a>
-        <h1>{{game.game}}</h1>
-        <h2>{{game.platform}}</h2>
-        <h3>{{game.score}}/10</h3>
-        {{/each}}
+  {{!-- content --}}
+
+  <section class="home" id="home">
+    <div class="container-fluid">
+      <div class="row">
+        {{#each games as |game|}}
+        <div class="col" id="details">
+          <a href="/book/{{game.id}}">
+            <img src="{{game.image_url}}" alt="" />
+          </a>
+          <h1>{{game.game}}</h1>
+          <h2>{{game.platform}}</h2>
+          <h3>{{game.score}}/10</h3>
+          {{/each}}
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<script src="./javascript/search.js"></script>
+  </section>
+</div>
+<script src="/javascript/search.js"></script>
