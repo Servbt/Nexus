@@ -1,4 +1,0 @@
-
-DROP DATABASE IF EXISTS videogames;
-
-CREATE DATABASE videogames;
