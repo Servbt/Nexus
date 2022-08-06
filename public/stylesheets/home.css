@@ -21,6 +21,8 @@
 }
 
 .sidebar {
+  /* display: block;
+  position: fixed; */
   max-height: 100vh;
   min-height: 100vh;
   background: rgb(38, 37, 40);
@@ -197,6 +199,13 @@ h2 {
   padding-bottom: -1px;
   margin-bottom: 10px;
 }
+
+.underline2 {
+  border-bottom: 1px solid rgb(109, 109, 109);
+  padding-bottom: -1px;
+  padding-top: 6px;
+  margin-bottom: 10px;
+}
   
 
 .nav-link {
@@ -204,9 +213,24 @@ h2 {
 }
 
 footer {
+  color: rgba(128, 128, 128, 0.164);
   display: flex;
   position: relative;
   justify-content: start;
-  margin-left: 5rem;
-  padding-bottom: 10px;
+  margin-left: 4rem;
+  margin-top: 10px;
+  padding-bottom: 1px;
+}
+
+
+#sidebarcon {
+  position: fixed;
+  width: 15.8%;
+
+}
+
+.dropdown {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 5px;
 }
