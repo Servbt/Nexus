@@ -2,14 +2,14 @@ const router = require("express").Router();
 const { Game, User, Review, Tag } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get('/dashboard', withAuth, async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Game }, { model: Review }, { model: Tag }],
     });
     const user = userData.get({ plain: true });
-    console.log(user);
+    // console.log(user);
 
     const gameData = await Game.findByPk(req.params.id);
 
@@ -19,6 +19,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // for rendering on handlebar
     // res.render('game', { game });
     res.render('dashboard', {
+      layout: 'main',
       user,
       game,
       logged_in: true,
@@ -46,9 +47,9 @@ router.get('/search/:game', async (req, res) => {
 });
 
 router.get("/", withAuth, (req, res) => {
-  Post.findAll({
+  Review.findAll({
     where: {
-      userId: req.session.userId
+      user_id: req.session.user_id
     }
   })
     .then(dbPostData => {
@@ -65,11 +66,11 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
-router.get("/new", withAuth, (req, res) => {
-  res.render("new-post", {
-    layout: "dashboard"
-  });
-});
+// router.get("/new", withAuth, (req, res) => {
+//   res.render("new-post", {
+//     layout: "dashboard"
+//   });
+// });
 
 router.get("/edit/:id", withAuth, (req, res) => {
   Post.findByPk(req.params.id)
