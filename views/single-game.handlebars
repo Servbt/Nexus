@@ -10,11 +10,22 @@
   </nav>
 
   <section class="categories">
-    <div class="category-header">
+    <div class="category-header" id="details" data-id={{id}}>
       <h2>{{game}}</h2>
       <h5>{{genre}}</h5>
       <h5>{{platform}}</h5>
     </div>
+
+    <div class="col" id="book-center">
+      {{#if hasGame}}
+      <button id="add-btn" class="disabled" disabled>In Your Favorites</button> <br>
+      <button id="delete-btn" class="btn-danger">Remove from Your Favorites</button>
+      {{else}}
+      <button id="add-btn">Add to Your Favorites</button>
+      {{/if}}
+
+    </div>
+
   </section>
 
   <section class="card">
@@ -51,3 +62,6 @@
     </div>
   </form>
 </div>
+
+<script src="/javascript/favorites.js"></script>
+<script src="/javascript/chosen-game.js"></script>

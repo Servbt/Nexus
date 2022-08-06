@@ -15,14 +15,16 @@ Tag.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'users',
-        key: 'id'
+        key: 'id',
+        unique: false
       }
     },
     game_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'games',
-        key: 'id'
+        key: 'id',
+        unique: false
       }
     },
     review_id: {

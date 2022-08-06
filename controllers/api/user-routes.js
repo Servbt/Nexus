@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Game, Tag} = require('../../models');
+const { User, Game, Tag } = require('../../models');
 
 // * /api/user
 
@@ -7,7 +7,7 @@ const {User, Game, Tag} = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll();
-    const users = userData.map((user) => user.get({plain: true}));
+    const users = userData.map((user) => user.get({ plain: true }));
 
     res.status(200).json(users);
   } catch (err) {
@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: {email: req.body.email},
+      where: { email: req.body.email },
     });
 
     if (!userData) {
@@ -62,7 +62,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.json({user: userData, message: 'You are now logged in!'});
+      res.json({ user: userData, message: 'You are now logged in!' });
     });
   } catch (err) {
     res.status(400).json(err);
@@ -85,9 +85,8 @@ router.post('/add', async (req, res) => {
   try {
     const userData = await Tag.create({
       user_id: req.session.user_id,
-      Game_id: req.body.Game_id,
+      game_id: req.body.game_id,
     });
-
     res.status(200).json(userData);
   } catch (err) {
     res.status(400).json(err);
@@ -98,19 +97,19 @@ router.post('/add', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
   try {
     console.log('!!! SUPER IMPORTANT', req.params.id, req.session.user_id);
-    const GameData = await Tag.destroy({
+    const gameData = await Tag.destroy({
       where: {
-        Game_id: req.params.id,
+        game_id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!GameData) {
-      res.status(404).json({message: 'No Game found with this id!'});
+    if (!gameData) {
+      res.status(404).json({ message: 'No game found with this id!' });
       return;
     }
 
-    res.status(200).json(GameData);
+    res.status(200).json(gameData);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -130,7 +129,7 @@ router.get('/:id', async (req, res) => {
     });
 
     if (!userData) {
-      res.status(404).json({message: 'No user found with this id'});
+      res.status(404).json({ message: 'No user found with this id' });
       return;
     }
 

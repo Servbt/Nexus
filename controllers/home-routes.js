@@ -26,7 +26,7 @@ router.get('/signup', async (req, res) => {
   res.render('signup', { layout: 'signin.handlebars' });
 });
 
-
+//render homepage
 router.get('/home', async (req, res) => {
   try {
     if (!req.session.logged_in) {
@@ -41,20 +41,20 @@ router.get('/home', async (req, res) => {
 
 
     Game.findAll({ offset: 120, limit: 20, })
-    
-    .then((dbData) => {
-      
-      const games = dbData.map((game) => game.get({ plain: true })) ;
-    
 
-      
-  
-      res.render('homepage', {
-        user,
-        games,
-        logged_in: req.session.logged_in,
+      .then((dbData) => {
+
+        const games = dbData.map((game) => game.get({ plain: true }));
+
+
+
+
+        res.render('homepage', {
+          user,
+          games,
+          logged_in: req.session.logged_in,
+        })
       })
-    })
 
     // //generating random 10 games
     // const gameNum = await Game.findAndCountAll();
@@ -69,7 +69,7 @@ router.get('/home', async (req, res) => {
     //   randomGames,
     //   logged_in: req.session.logged_in,
     // });
-  
+
 
   } catch (err) {
     res.status(500).json(err);
