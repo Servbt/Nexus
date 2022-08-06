@@ -2,6 +2,11 @@
   color: white;
 }
 
+#genresection {
+  margin-left: 10rem;
+  margin-right: 5rem;
+}
+
 .h3-color {
   color: gray;
 }
@@ -13,4 +18,11 @@
 
 .bc-bg a {
   color: white;
+}
+
+.categories h1 {
+  position: relative;
+  left: 15vw;
+  font-size: 40px;
+  padding-bottom: 28px;
 }
