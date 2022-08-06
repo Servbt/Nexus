@@ -1,9 +1,28 @@
+@font-face {
+  font-family: ZeroFont ;
+  src: url(../Fonts/RapierZero-325M.ttf);
+}
+
+.SIGNOUT, .dropdown {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: lighter;
+  text-decoration: none;
+  list-style:disc;
+}
+
+.SIGNOUT:hover {
+  color: red;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: 280px 1fr;
 }
 
 .sidebar {
+  /* display: block;
+  position: fixed; */
   max-height: 100vh;
   min-height: 100vh;
   background: rgb(38, 37, 40);
@@ -13,15 +32,15 @@
 body {
   background: rgb(32, 29, 43);
   background: radial-gradient(circle, rgba(32, 29, 43, 1) 16%, rgba(16, 14, 23, 1) 67%);
-  font-family: 'Open Sans', sans-serif;
+  font-family: ZeroFont;
 }
 
 .container {
   position: absolute;
   height: 300px;
   width: 800px;
-  top: 180px;
-  left: calc(60% - 300px);
+  top: 280px;
+  left: calc(55% - 300px);
   display: flex;
 }
 
@@ -76,30 +95,7 @@ body {
   top: 15px;
 }
 
-/* .bar:hover {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    height: 5px;
-    width: 125px;
-  }
-  
-  .emptybar {
-    background-color: #2e3033;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .filledbar {
-    position: absolute;
-    top: 0px;
-    z-index: 3;
-    width: 0px;
-    height: 100%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
-    transition: 0.6s ease-out;
-  } */
+
 
 .card:hover .filledbar {
   width: 120px;
@@ -111,6 +107,7 @@ body {
   bottom: -4rem;
   left: calc(50% - 60px);
 }
+
 
 .stroke {
   stroke: white;
@@ -139,11 +136,17 @@ svg {
 
 .nav a:hover {
   text-decoration: none;
+  color: white;
+}
+.content .nav.nav-pills.nav-justified {
+  background-color: rgba(0, 0, 0, 0.151);
+  padding-bottom: 5px;
 }
 
 .nav a {
   padding-top: 15px;
   font-size: 20px;
+  font-weight: lighter;
 }
 
 .nav-pills .nav-link.active {
@@ -165,6 +168,72 @@ h1 {
   filter: drop-shadow(10px 10px 4px #000000);
 }
 
+h2 {
+  color: rgba(255, 0, 0, 0.925);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0px;
+  padding-left: 60px;
+  padding-top: 40px;
+  margin-left: 20px;
+  font-size: 35px;
+  text-transform: capitalize;
+  filter: drop-shadow(10px 10px 4px #000000);
+}
+
+.btn.btn-outline-danger {
+  color: red ;
+  
+
+}
+
+.btn.btn-outline-danger:hover {
+  color: white ;
+  background-color: red;
+
+}
+
+.underline {
+  border-bottom: 1px solid rgb(109, 109, 109);
+  padding-bottom: -1px;
+  margin-bottom: 10px;
+}
+
+.underline2 {
+  border-bottom: 1px solid rgb(109, 109, 109);
+  padding-bottom: -1px;
+  padding-top: 6px;
+  margin-bottom: 10px;
+}
+  
+
 .nav-link {
   color: rgb(253, 253, 253);
 }
+
+footer {
+  color: rgba(128, 128, 128, 0.164);
+  display: flex;
+  position: relative;
+  justify-content: start;
+  margin-left: 4rem;
+  margin-top: 10px;
+  padding-bottom: 1px;
+}
+
+
+#sidebarcon {
+  position: fixed;
+  width: 15.8%;
+
+}
+
+.dropdown {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 5px;
+}
+
+
+
