@@ -14,6 +14,13 @@
 
   {{!-- content --}}
   {{#if games}}
+  <div class="container">
+    {{#each games as |game|}}
+    {{> search-result}}
+    {{/each}}
+  </div>
+
+  {{!-- {{#if games}}
   <section class="p-3" id="home">
     <div class="row">
       {{#each games as |game|}}
@@ -27,7 +34,7 @@
       </a>
       {{/each}}
     </div>
-  </section>
+  </section> --}}
 
   {{else}}
   <div class="container-fluid">
@@ -37,6 +44,7 @@
     </div>
   </div>
   {{/if}}
+
 
 </div>
 <script src="/javascript/search.js"></script>
