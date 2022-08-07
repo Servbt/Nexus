@@ -232,5 +232,9 @@ footer {
   padding-bottom: 5px;
 }
 
+.slick-arrow::before {
+  color: red;
+}
+
 
 
