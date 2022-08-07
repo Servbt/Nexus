@@ -18,11 +18,11 @@ router.get('/', withAuth, async (req, res) => {
     // res.status(200).json(game);
     // for rendering on handlebar
     // res.render('game', { game });
-    res.render('dashboard', {
+    res.render('dash', {
       layout: 'main',
       user,
       game,
-      logged_in: true,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
