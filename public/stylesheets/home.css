@@ -36,11 +36,7 @@ body {
 }
 
 .container {
-  position: absolute;
   height: 300px;
-  width: 800px;
-  top: 280px;
-  left: calc(55% - 300px);
   display: flex;
 }
 

@@ -12,7 +12,7 @@ searchBtn.addEventListener('click', expand);
 $(document).ready(function(){
   console.log("this is working")
   $('.autoplay').slick({
-    slidesToShow: 4,
+    slidesToShow: 8,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 6000,

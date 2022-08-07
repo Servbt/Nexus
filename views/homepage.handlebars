@@ -38,30 +38,30 @@
   </div>
   <div><h2>Featured Games</h2></div>
 
-</div>
+  <div class="container autoplay">
+    {{#each games}}
+    <div class="card">
+      <h3 id="gamename">
+        <a href="/game/{{id}}">{{game}}</a>
+      </h3>
+      <div id="gameCover"></div>
 
+      <div class="card-body">
+        {{!-- {{body}} --}}
+      </div>
+      <!-- <div class="bar">
+        <div class="emptybar"></div>
+        <div class="filledbar"></div>
+      </div>
+      <div class="circle">
 
-<div class="container autoplay">
-  {{#each games}}
-  <div class="card">
-    <h3 id="gamename">
-      <a href="/game/{{id}}">{{game}}</a>
-    </h3>
-    <div id="gameCover"></div>
-
-    <div class="card-body">
-      {{!-- {{body}} --}}
+      </div> -->
     </div>
-    <!-- <div class="bar">
-      <div class="emptybar"></div>
-      <div class="filledbar"></div>
-    </div>
-    <div class="circle">
-
-    </div> -->
+    {{/each}}
   </div>
-  {{/each}}
 </div>
+
+
 
 <style>
 .nav-item a[href="/home"] {
