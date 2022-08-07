@@ -1,74 +1,52 @@
-     <link rel="stylesheet" href="/stylesheets/dashboard.css">
-     <!-- Main Dashboard -->
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Sidebar - Left  -->
-        {{!-- <nav
-          id="sidebarMenu"
-          class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"
-        >
-          <div class="position-sticky pt-3">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <section class="sidebar">
-                  <div class="sidebar-list">
-                    <div class="list-group">
-                      <ul>
-                        <li id="sidebar-buttons" class="list-group-item">
-                        <a href='/dashboard' onclick="yourbooks()" id="your-books">Your Books</a>
-                        </li> --}}
-                        {{!-- <li id="sidebar-buttons" class="list-group-item">
-                        <a href='/dashboard/for_you' onclick="foryou()" id="for-you">For you</a>
-                        </li> --}}
-                        {{!-- <li id="sidebar-buttons" class="list-group-item">
-                        <a href='/dashboard' onclick="booksread()" id="books-read">Books Read</a>
-                        </li> --}}
-                        {{!-- <li id="sidebar-buttons" class="list-group-item">
-                        <a href='/dashboard' onclick="currentbooks()" id="current">Currently Reading</a>
-                        </li> --}}
-                      {{!-- </ul>
-                    </div>
-                  </div>
-                </section>
+<link rel="stylesheet" href="/stylesheets/dashboard.css">
+<link rel="stylesheet" href="/stylesheets/genre.css">
+<!-- Main Dashboard -->
+<div>
+  <!-- Breadcrumbs-->
+  <nav class="pt-3 pb-2 px-3 bc-bg"
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
+    aria-label="breadcrumb">
+    <ol class="breadcrumb">
+
+      <li class="breadcrumb-item"><a href="/home">Home</a></li>
+      <li class="breadcrumb-item inactive" aria-current="page">Dashboard</li>
+    </ol>
+  </nav>
+
+  <div class="row">
+    <!-- Books Appear Here  -->
+    <section class="books-list">
+      <main>
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2" id="dash-title">{{user.name}}'s Dashboard</h1>
+          <div class="btn-toolbar mb-2 mb-md-0"></div>
+        </div>
+      </main>
+
+      <div>
+        <h1>Your Games: </h1>
+        <div class="container border border-3 rounded">
+          <ul>
+            {{#each user.games as |game|}}
+            <a href="/game/{{game.id}}">
+              <li>
+                <h1>{{game.game}}</h1>
               </li>
-            </ul>
-          </div>
-        </nav> --}}
-
-        <!-- Books Appear Here  -->
-        <section class="books-list">
-          <main>
-            <div class="chartjs-size-monitor">
-              <div class="chartjs-size-monitor-expand">
-                <div class=""></div>
-              </div>
-              <div class="chartjs-size-monitor-shrink">
-                <div class=""></div>
-              </div>
-            </div>
-            <div
-              class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-            >
-              <h1 class="h2" id="dash-title">Dashboard</h1>
-              <div class="btn-toolbar mb-2 mb-md-0"></div>
-            </div>
-          </main>
-
-          <div class="book-database">
-            <div class="container-fluid">
-                {{#each user.books as |book|}}
-                <a href="/book/{{book.id}}"><img src="{{book.image_url}}" alt=""></a>
-                {{/each}}
-            </div>
-
-          </div>
-        </section>
+            </a>
+            {{/each}}
+          </ul>
+        </div>
       </div>
-    </div>
-  <style>
-      #reddashboard {
-        background-color: red;
-        border-radius: 7px;
-      }
-    </style>
-<script src="/js/dashboard.js"></script>
+
+    </section>
+  </div>
+</div>
+
+<style>
+  #reddashboard {
+    background-color: red;
+    border-radius: 7px;
+  }
+</style>
+<script src="/javascript/dashboard.js"></script>

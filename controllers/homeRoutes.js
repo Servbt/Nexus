@@ -117,13 +117,7 @@ router.get('/game/:id', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    const gameData = await Game.findByPk(req.params.id
-      //   , {
-      //   include: [
-      //     { model: Review }, { model: User }, { model: Tag }
-      //   ]
-      // }
-    );
+    const gameData = await Game.findByPk(req.params.id);
     const game = gameData.get({ plain: true });
 
     // compare 'Game' to 'user.Games'\
