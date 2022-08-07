@@ -1,0 +1,25 @@
+.text-light .game.p-3 h5{
+    margin-left: 20vw;
+    margin-right: 5rem;
+   
+  }
+
+.text-light .game.p-3  #book-center {
+    margin-left: 20vw;
+    margin-right: 5rem;
+}
+
+.text-light .card {
+    margin-left: 34vw;
+    margin-right: 5rem;
+   
+}
+  
+.text-light .new-comment-form {
+    display: flex;
+    margin-left: 20vw;
+    margin-right: 5rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}

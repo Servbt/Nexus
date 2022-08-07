@@ -15,12 +15,11 @@
   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
 
   <link rel="stylesheet" href="/stylesheets/main.css">
-  <link rel="stylesheet" href="/stylesheets/category.css">
+  
   {{!--
   <link rel="stylesheet" href="/stylesheets/chosen-game.css"> --}}
-  <link rel="stylesheet" href="/stylesheets/home.css">
-  <link rel="stylesheet" href="/stylesheets/genre.css">
-  <link rel="stylesheet" href="/stylesheets/dashboard.css">
+  
+  
   <link rel="stylesheet" href="/stylesheets/game.css">
   <link rel="stylesheet" href="/stylesheets/home.css">
 
@@ -36,8 +35,7 @@
           </svg>
           <div class="nexuslogo">
             <img src="../../images/nexustext.png" class="rounded float-start" alt="...">
-            {{!-- <img src="images/nexustext.png" <div class="bg-transparent" alt="..." class="img-thumbnail">
-          </div> --}}
+        
       </div>
       </a>
       <hr>
@@ -56,12 +54,14 @@
           </a>
         </li>
         <li>
+          <div id="reddashboard">
           <a href="/dashboard" class="nav-link">
             <svg class="bi pe-none me-2" width="16" height="16">
               <use xlink:href="#dashboard"></use>
             </svg>
             Dashboard
           </a>
+          </div>
         </li>
         <li>
           <div id="redgenre">
@@ -80,8 +80,6 @@
     </div>
     <hr>
     <div class="dropdown">
-      {{!-- <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-        data-bs-toggle="dropdown" aria-expanded="false"> --}}
         <img src="https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg" alt=""
           width="32" height="32" class="rounded-circle me-2">
         <strong>{{user.name}}</strong>

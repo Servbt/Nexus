@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { Game, User, Review, Tag } = require('../models');
 
 const withAuth = require('../utils/auth');
-const { randomNumber } = require('../utils/helper');
+const { randomNumber } = require('../utils/helpers');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
