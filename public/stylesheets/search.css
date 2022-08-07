@@ -1,0 +1,14 @@
+
+.bc-bg {
+  background: rgb(242,112,11);
+background: radial-gradient(circle, rgba(242,112,11,1) 12%, rgba(255,0,0,1) 65%);
+  opacity: 75;
+  border-radius: 10px;
+}
+
+.bc-bg a {
+  color: white;
+}
+
+
+
