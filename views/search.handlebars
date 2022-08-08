@@ -13,12 +13,17 @@
   </nav>
 
   {{!-- Header --}}
-  <h1>Results for: {{searchedTerm}}</h1>
+  
+  <section class="categories p-3">
+            <div class="header">
+              <h1>Results for: {{searchedTerm}}</h1>
+            </div>
+          </section>
 
   {{!-- content --}}
   {{#if games}}
   <div class="column">
-    <div class="row flex-wrap">
+    <div class="row flex-wrap grid">
       {{#each games as |game|}}
       {{> search-result}}
       {{/each}}

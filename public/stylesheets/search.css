@@ -23,5 +23,5 @@
 }
 
 .search .angled-img {
-  display: flex;
+  display: inline-flex;
 }
