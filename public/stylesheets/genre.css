@@ -29,4 +29,13 @@ background: radial-gradient(circle, rgba(242,112,11,1) 12%, rgba(255,0,0,1) 65%)
   padding-bottom: 28px;
 }
 
+.genre .angled-img {
+  display: inline-flex;
+}
+
+.genre #redgenre {
+  background-color: red;
+  border-radius: 7px;
+}
+
 
