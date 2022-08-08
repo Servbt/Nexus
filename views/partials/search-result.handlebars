@@ -1,28 +1,20 @@
-<div class="grid grid-3">
-
-  <div class="item">
-
-    <a class="angled-img" href="/game/{{id}}">
-      <div class="img img-offset">
-        <img width="500" height="220" src="" alt="" srcset="" sizes="(max-width: 500px) 100vw, 500px">
-      </div>
-      <div class="bottom-info">
-        <h4 class="title">{{game}}</h4>
-        <div class="row">
-          <div class="col-12">
-            <div class="rating-back">
-              {{score}}/10
-            </div>
+<div class="column p-3">
+  <a class="angled-img" href="/game/{{id}}">
+    <div class="img img-offset">
+      <img width="500" height="220" src="" alt="" srcset="" sizes="(max-width: 500px) 100vw, 500px">
+    </div>
+    <div class="bottom-info">
+      <h3 class="title">{{game}}</h3>
+      <div class="row">
+        <div class="col-12">
+          <div class="rating-back h2">
+            {{score}}/10
           </div>
         </div>
       </div>
-    </a>
+    </div>
+  </a>
 
-    <div class="favorites"> <a href="?add-to-cart=103" data-quantity="1"
-        class="btn btn-default btn-sm  product_type_simple add_to_cart_button" data-product_id="103" data-product_sku=""
-        aria-label="Add “{{game}}” to your cart" rel="nofollow">Add to
-        favorites</a> </div>
-  </div>
 </div>
 
 <style>

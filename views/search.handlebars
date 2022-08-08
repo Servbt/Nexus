@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="/stylesheets/genre.css">
 <div class="text-light">
   <!--Breadcrumbs-->
   <nav class="pt-3 pb-2 px-3 bc-bg"
@@ -10,31 +11,13 @@
   </nav>
 
   {{!-- Header --}}
-  <h1>Results for: {{searchedTerm}}</h1>
+  <h1 class="p-3">Results for: {{searchedTerm}}</h1>
 
   {{!-- content --}}
   {{#if games}}
-  <div class="container">
-    {{#each games as |game|}}
-    {{> search-result}}
-    {{/each}}
-  </div>
-
-  {{!-- {{#if games}}
-  <section class="p-3" id="home">
-    <div class="row">
-      {{#each games as |game|}}
-      <a href="/game/{{game.id}}">
-        <div class="col" id="details">
-          <img src="{{game.image_url}}" alt="" />
-          <h1>{{game.game}}</h1>
-          <h3>{{game.platform}}</h3>
-          <h3>{{game.score}}/10</h3>
-        </div>
-      </a>
-      {{/each}}
-    </div>
-  </section> --}}
+  {{#each games as |game|}}
+  {{> search-result}}
+  {{/each}}
 
   {{else}}
   <div class="container-fluid">
@@ -47,4 +30,5 @@
 
 
 </div>
+<script src="/javascript/favorites.js"></script>
 <script src="/javascript/search.js"></script>
