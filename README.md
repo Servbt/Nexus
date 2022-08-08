@@ -4,15 +4,24 @@
 - [🎮 Nexus](#-nexus)
   - [Table of Contents](#table-of-contents)
   - [🔎 Overview](#-overview)
+  - [👥 Contributors](#-contributors)
   - [💻 Technologies](#-technologies)
   - [💾 Database Table Associations](#-database-associations)
   - [🖼️ Images](#-images)
 
+<br>
 
 ## 🔎 Overview
 Nexus is an application that gives users the ability to search through video games, read/write reviews, and add games to their list of favorites to come back to!
-
-
+<br>
+<br>
+## 👥 Contributors
+[Khaled Ghanem](https://github.com/khaledghanem1)<br>
+[Noor Ridha](https://github.com/Nridha0)<br>
+[Alex Saunders](https://github.com/alxsaunders)<br> 
+[Arian](https://github.com/Servbt)<br>
+[Rhea Lee](https://github.com/rheangocle)<br>
+<br>
 ## 💻 Technologies
 
 |                       Technologies Used                        |
@@ -30,11 +39,13 @@ Nexus is an application that gives users the ability to search through video gam
 |                [MySQL2 NPM package](https://www.npmjs.com/package/mysql2)    |
 |               [Slick-Carousel](https://www.npmjs.com/package/slick-carousel)                |
 | [Twich API](https://dev.twitch.tv/docs/api/)                 |
+<br>
 
 
 ## 💾  Database Associations
 ![DB tables](./public/images/db-screenshot.png)
-
+<br>
+<br>
 ## 🖼️  Images
 ![Login Page](./public/images/login-screenshot.png)
 
