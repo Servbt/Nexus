@@ -1,26 +1,26 @@
 
-const commentFormHandler = async function(event) {
-    event.preventDefault();
-  
-    const postId = document.querySelector('input[name="post-id"]').value;
-    const body = document.querySelector('textarea[name="comment-body"]').value;
-  
-    if (body) {
-      await fetch('/api/comment', {
-        method: 'POST',
-        body: JSON.stringify({
-          postId,
-          body
-        }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-  
-      document.location.reload();
+const commentFormHandler = async function (event) {
+  event.preventDefault();
+  let gameId = document.querySelector('#details').dataset.id;
+  const body = document.querySelector('textarea[name="comment-body"]').value.trim();
+
+  if (body) {
+    const response = await fetch('/api/review', {
+      method: 'POST',
+      body: JSON.stringify({ content: body, game_id: gameId }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      location.reload();
+    } else {
+      alert('Sorry, your review could not be added.');
     }
-  };
-  
-  document
-    .querySelector('#new-comment-form')
-    .addEventListener('submit', commentFormHandler);
+  }
+};
+
+document
+  .querySelector('#new-comment-form')
+  .addEventListener('submit', commentFormHandler);

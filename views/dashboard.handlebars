@@ -19,7 +19,7 @@
 
       <div
         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h2 class="h2 p-3" id="dash-title">{{user.name}}'s Dashboard</h2>
+        <h2 class="h2 p-3" id="dash-title">{{name}}'s Dashboard</h2>
         <div class="btn-toolbar mb-2 mb-md-0"></div>
       </div>
 
@@ -30,10 +30,27 @@
       </div>
       <div class="m-3 border border-3 rounded">
         <ul>
-          {{#each user.games as |game|}}
+          {{#each games as |game|}}
           <a href="/game/{{game.id}}">
             <li>
               <h1>{{game.game}}</h1>
+            </li>
+          </a>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <div class="p-3">
+        <h1>Your Reviews: </h1>
+      </div>
+      <div class="m-3 border border-3 rounded">
+        <ul>
+          {{#each reviews as |review|}}
+          <a href="/game/{{game.id}}">
+            <li>
+              <h1>{{review.content}}</h1>
             </li>
           </a>
           {{/each}}
