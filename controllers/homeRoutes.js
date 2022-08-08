@@ -1,4 +1,15 @@
 const router = require('express').Router();
+const axios = require('axios').default;
+
+const axiosOptions = {
+
+  headers: {
+    "Authorization": 'Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt',
+    "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww"
+  }
+
+}
+
 
 const { Game, User, Review, Tag } = require('../models');
 
@@ -56,21 +67,6 @@ router.get('/home', async (req, res) => {
         })
       })
 
-    // //generating random 10 games
-    // const gameNum = await Game.findAndCountAll();
-    // const randomGames = [];
-
-    // for (let i = 0; i < 10; i++) {
-    //   const gameData = await Game.findByPk(randomNumber(gameNum.count));
-    //   randomGames.push(gameData.dataValues);
-    // }
-    // res.render('all-posts-new', {
-    //   user,
-    //   randomGames,
-    //   logged_in: req.session.logged_in,
-    // });
-
-
   } catch (err) {
     res.status(500).json(err);
   }
@@ -85,28 +81,32 @@ router.get('/search/:term', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    const searchedTerm = req.params.term.replace('%20', '_');
-    const gameData = await Game.findAll({
-      where: {
-        [Op.or]: [
-          { game: { [Op.like]: `%${req.params.term}%` } },
-          { genre: { [Op.like]: `%${req.params.term}%` } },
-        ],
-      },
-    });
+    const searchedTerm = req.params.term
 
-    const games = gameData.map((game) => game.get({ plain: true }));
 
-    res.render('search', {
-      user,
-      searchedTerm,
-      games,
-      logged_in: req.session.logged_in,
-    });
+    axios.get(`https://api.twitch.tv/helix/search/categories?query=${searchedTerm}`, axiosOptions)
+      .then(response => {
+        const gameArr = response.data.data;
+        console.log(gameArr)
+        please(gameArr)
+      })
+      .catch(err => console.log(err))
+
+    function please(gameArr) {
+      res.render('search', {
+        user,
+        // games,
+        searchedTerm,
+        gameArr,
+        logged_in: req.session.logged_in,
+      })
+    }
+
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 // render Game by id
 router.get('/game/:id', async (req, res) => {
