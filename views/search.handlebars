@@ -15,9 +15,13 @@
 
   {{!-- content --}}
   {{#if gameArr}}
-  {{#each gameArr}}
-  {{> search-result}}
-  {{/each}}
+  <div class="container-fluid">
+    {{#each gameArr}}
+    <div class="p-4 row">
+      {{> search-result}}
+    </div>
+    {{/each}}
+  </div>
 
   {{else}}
   <div class="container-fluid">
@@ -32,5 +36,3 @@
 </div>
 <script src="/javascript/favorites.js"></script>
 <script src="/javascript/search.js"></script>
-
-
