@@ -14,7 +14,7 @@ const addingGame = async () => {
   if (response.ok) {
     addBtn.classList.add('active');
     addBtn.textContent = 'Added to your favorites!';
-
+    location.reload();
   } else {
     alert('This game is already added to your favorites.');
   }
@@ -29,6 +29,7 @@ const deletingGame = async () => {
     // addBtn.classList.remove('disabled');
     addBtn.textContent = 'Add to Your Favorites';
     deleteBtn.style.display = 'none';
+    location.reload();
   } else {
     alert('Failed to delete game');
   }

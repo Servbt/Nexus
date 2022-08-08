@@ -113,27 +113,30 @@ router.get('/game/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Game }],
+      include: [{ model: Game }, { model: Review }],
     });
     const user = userData.get({ plain: true });
 
     const gameData = await Game.findByPk(req.params.id
-      //   , {
-      //   include: [
-      //     { model: Review }, { model: User }, { model: Tag }
-      //   ]
-      // }
+      , {
+        include: [{ model: User },
+        { model: Review, include: [User] }
+        ]
+      }
     );
     const game = gameData.get({ plain: true });
 
+    const reviewData = await Review.findByPk(req.params.review_id, {
+      include: [{ model: User }, { model: Game }]
+    });
+
+    // const review = reviewData.get({ plain: true });
     // compare 'Game' to 'user.Games'\
     const userGameIds = user.games.map((game) => game.id);
     const hasGame = userGameIds.includes(game.id);
 
-    // const recommendedData = same.recommended.slice(1, -1).split("', '");
-    // const recommendedGames = recommendedData.map((element) =>
-    //   element.replace('"', '').replace("'", '').split('|')
-    // );
+    // const gameReviewIds = game.reviews.map((review) => review.id);
+    // const hasReview = gameReviewIds.includes(review.id);
 
     // render chosen Game page
     res.render('single-game', {

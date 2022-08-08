@@ -15,7 +15,9 @@
   <section class="game p-3">
     <div class="game-header" id="details" data-id={{id}}>
 
-      <h2><div id="gamename">{{game}}</div></h2>
+      <h2>
+        <div id="gamename">{{game}}</div>
+      </h2>
       <h5>{{genre}}</h5>
       <h6>{{platform}}</h6>
     </div>
@@ -35,36 +37,37 @@
     </div>
 
   </section>
-<div class="sectioncard">
-  <section class="card" style="width: 59rem" >
-    <div class="card-header">
-      <h3>Reviews</h3>
-    </div>
-
-    <div class="card-body">
-
-      <div>
-        <p>
-          {{!-- {{body}} --}}
-        </p>
-        <p>
-
-        </p>
+  <div class="sectioncard">
+    <section class="card" style="width: 59rem">
+      <div class="card-header">
+        <h3>Reviews</h3>
       </div>
-    </div>
-  </section>
-</div>
+      {{#if reviews}}
+      <div class="card-body">
+        {{#each reviews as |review|}}
+        <div style="background-color:#262528">
+          <p>
+            "{{review.content}}" - {{ user.name}}
+          </p>
+          <p>
+            {{!-- {{format_date createdAt}} --}}
+          </p>
+        </div>
+        {{/each}}
+      </div>
+    </section>
+    {{/if}}
+  </div>
   <form id="new-comment-form" class="card" style="width: 59rem">
     <div class="card-header">
       <h3>Add A New Review</h3>
     </div>
 
     <div class="card-body">
-      <input type="hidden" name="post-id" value="{{id}}" />
 
       <label class="form-label" for="comment-body">Review</label>
 
-      <textarea name="comment-body" class="form-input" style="width: 54rem"></textarea>
+      <textarea id='review-content' name="comment-body" class="form-input" style="width: 54rem"></textarea>
 
       <button type="submit" class="btn">Submit</button>
     </div>
@@ -72,5 +75,6 @@
 </div>
 
 <script src="/javascript/favorites.js"></script>
-<script src="/javascript/chosen-game.js"></script>
-  <script src="/javascript/single-game.js"></script>
+
+<script src="/javascript/single-game.js"></script>
+<script src="/javascript/comment.js"></script>
