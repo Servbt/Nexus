@@ -28,3 +28,13 @@ Nexus is an application that gives users the ability to search through video gam
 |                [MySQL2 NPM package](https://www.npmjs.com/package/mysql2)    |
 |               [Slick-Carousel](https://www.npmjs.com/package/slick-carousel)                |
 | [Twich API](https://dev.twitch.tv/docs/api/)                 |
+
+
+## 🖼️  Images
+![Login Page](./public/images/login-screenshot.png)
+
+![Home Page](./public/images/home-screenshot.png)
+
+![Search Page](./public/images/search-screenshot.png)
+
+![Genre Page](./public/images/genre-screenshot.png)
