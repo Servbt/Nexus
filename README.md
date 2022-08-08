@@ -1,7 +1,7 @@
-# 🎮 Nexus
+# 🎮 Welcome to Nexus
 
 ## Table of Contents
-- [🎮 Nexus](#-nexus)
+- [🎮  Nexus](#-nexus)
   - [Table of Contents](#table-of-contents)
   - [🔎 Overview](#-overview)
   - [👥 Contributors](#-contributors)
@@ -47,6 +47,7 @@ Nexus is an application that gives users the ability to search through video gam
 <br>
 <br>
 ## 🖼️  Images
+
 ![Login Page](./public/images/login-screenshot.png)
 
 ![Home Page](./public/images/home-screenshot.png)
