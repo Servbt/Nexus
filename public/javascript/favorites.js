@@ -1,5 +1,5 @@
-const addBtn = document.querySelector('#add-btn');
-const deleteBtn = document.querySelector('#delete-btn');
+const addBtn = document.querySelector('.add-btn');
+const deleteBtn = document.querySelector('.delete-btn');
 let gameId = document.querySelector('#details').dataset.id;
 
 const addingGame = async () => {
