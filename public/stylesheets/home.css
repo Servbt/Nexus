@@ -213,6 +213,7 @@ h2 {
 }
 
 footer {
+  font-size: 30px;
   color: rgba(128, 128, 128, 0.164);
   display: flex;
   align-content: center;
@@ -220,9 +221,15 @@ footer {
   justify-content: center;
   margin-left: 4rem;
   margin-top: 10px;
-  padding-bottom: 1px;
+  padding-bottom: 20px;
 }
 
+footer h3{
+  position: relative;
+  font-size: 30px;
+  left: 41px;
+  color: rgba(255, 255, 255, 0.418)
+}
 
 #sidebarcon {
   position: fixed;

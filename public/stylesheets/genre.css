@@ -30,3 +30,6 @@ background: radial-gradient(circle, rgba(242,112,11,1) 12%, rgba(255,0,0,1) 65%)
 }
 
 
+footer {
+  display: none;
+}
