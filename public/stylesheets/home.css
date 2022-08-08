@@ -219,11 +219,9 @@ footer {
   padding-bottom: 1px;
 }
 
-
-#sidebarcon {
-  /* position: fixed;
-  width: 15.8%; */
-
+.sidebar {
+  top: 0;
+  position: sticky;
 }
 
 .dropdown {
