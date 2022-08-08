@@ -46,12 +46,9 @@
       <div class="card-body">
         {{#each reviews as |review|}}
         <div style="background-color:#262528">
-          <p>
-            "{{review.content}}" - {{ user.name}}
-          </p>
-          <p>
-            {{!-- {{format_date createdAt}} --}}
-          </p>
+          <h4>
+            "{{review.content}}" -- {{ user.name}} created at {{format_date review.date_created}}
+          </h4>
         </div>
         {{/each}}
       </div>
