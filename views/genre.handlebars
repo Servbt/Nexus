@@ -21,12 +21,13 @@
           <section class="categories">
             <div class="header">
               <h1 class="p-3">{{genreTitle}} Games</h1>
+              <p>Sorted in ascending order: </p>
             </div>
           </section>
 
           {{#if genres}}
-          <div class="container">
-            <div class="row flex-wrap">
+          <div class="container-fluid">
+            <div class="row">
               {{#each genres as |game|}}
               {{> genre-result}}
               {{/each}}

@@ -1,21 +1,10 @@
-<div class="column p-3">
-  <a class="angled-img" href="/game/{{id}}">
-    <div class="img img-offset">
-            <img src={{box_art_url}} alt="" />
-    </div>
-    <div class="bottom-info">
-      <h3 class="title">{{name}}</h3>
-      <div class="row">
-        <div class="col-12">
-          <div class="rating-back h2">
-            {{score}}/10
-          </div>
-        </div>
-      </div>
-    </div>
-  </a>
+<a class="angled-img" href="/game/{{id}}">
+  <div class="img-offset">
+    <img src={{box_art_url}} alt="" />
+  </div>
+  <h1>{{name}}</h1>
+</a>
 
-</div>
 
 <style>
   .angled-img {
@@ -23,19 +12,19 @@
   }
 </style>
 
-{{!-- 
+{{!--
 <section class="home" id="home">
-    <div class="container-fluid">
-      {{#each gameArr}}
-      <div class="row">
-        <div class="col" id="details">
-          <a href="/book/{{game.id}}">
+  <div class="container-fluid">
+    {{#each gameArr}}
+    <div class="row">
+      <div class="col" id="details">
+        <a href="/book/{{game.id}}">
 
-          </a>
-          <h1>{{name}}</h1>
+        </a>
+        <h1>{{name}}</h1>
 
-        </div>
       </div>
-      {{/each}}
     </div>
-  </section> --}}
+    {{/each}}
+  </div>
+</section> --}}
