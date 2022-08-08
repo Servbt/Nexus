@@ -5,11 +5,13 @@
   - [Table of Contents](#table-of-contents)
   - [🔎 Overview](#-overview)
   - [💻 Technologies](#-technologies)
-  - [🖼️ Images](#-images)
   - [💾 Database Table Associations](#-database-associations)
+  - [🖼️ Images](#-images)
+
 
 ## 🔎 Overview
 Nexus is an application that gives users the ability to search through video games, read/write reviews, and add games to their list of favorites to come back to!
+
 
 ## 💻 Technologies
 
@@ -29,6 +31,9 @@ Nexus is an application that gives users the ability to search through video gam
 |               [Slick-Carousel](https://www.npmjs.com/package/slick-carousel)                |
 | [Twich API](https://dev.twitch.tv/docs/api/)                 |
 
+
+## 💾  Database Associations
+![DB tables](./public/images/db-screenshot.png)
 
 ## 🖼️  Images
 ![Login Page](./public/images/login-screenshot.png)
