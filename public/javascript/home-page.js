@@ -691,3 +691,4 @@ getGameImage(game1)
 //     let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
 //     console.log(gameImage);
 //     cover.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+
