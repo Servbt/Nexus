@@ -1,4 +1,15 @@
 const router = require('express').Router();
+const axios = require('axios').default;
+
+const axiosOptions = {
+
+  headers: {
+    "Authorization": 'Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt',
+    "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww"
+  }
+
+}
+
 
 const { Game, User, Review, Tag } = require('../models');
 

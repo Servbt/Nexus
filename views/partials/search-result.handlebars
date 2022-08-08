@@ -1,10 +1,10 @@
 <div class="column p-3">
   <a class="angled-img" href="/game/{{id}}">
     <div class="img img-offset">
-      <img width="500" height="220" src="" alt="" srcset="" sizes="(max-width: 500px) 100vw, 500px">
+            <img src={{box_art_url}} alt="" />
     </div>
     <div class="bottom-info">
-      <h3 class="title">{{game}}</h3>
+      <h3 class="title">{{name}}</h3>
       <div class="row">
         <div class="col-12">
           <div class="rating-back h2">
@@ -22,3 +22,20 @@
     display: flex;
   }
 </style>
+
+{{!-- 
+<section class="home" id="home">
+    <div class="container-fluid">
+      {{#each gameArr}}
+      <div class="row">
+        <div class="col" id="details">
+          <a href="/book/{{game.id}}">
+
+          </a>
+          <h1>{{name}}</h1>
+
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </section> --}}
