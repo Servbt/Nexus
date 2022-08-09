@@ -12,10 +12,10 @@ searchBtn.addEventListener('click', expand);
 $(document).ready(function(){
   console.log("this is working")
   $('.autoplay').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 1100,
+    autoplaySpeed: 2000,
   
   });
 });

@@ -12,14 +12,15 @@ body {
 
 
 .container .card {
-    background-image: url(../images/placeholder.jpg);
+    background-image: url(../images/transparent.png);
     background-repeat: no-repeat; 
-    background-size: 240px 300px;
+    background-size: cover;
     border-radius: 40px;
     
+    
 
-   height: 300px;
-  width: 200px;
+   height: 220px;
+  width: 90px;
 
 }
 
@@ -31,7 +32,7 @@ body {
 }
 
 .card img {
-    max-width: 100%;
+    max-width: 85%;
     
     max-height: 80%;
     border-radius: 20px;
@@ -124,12 +125,23 @@ body {
     display: flex;
     justify-content: center;
     position: relative;
-    top: -5vh;
-    left: -3vw;
+    top: -16vh;
+    left: 15.5vw;
     padding-left: 60px;
     padding-top: 40px;
     margin-left: 20px;
     font-size: 41px;
     text-transform: capitalize;
     filter: drop-shadow(10px 10px 4px #000000);
+  }
+
+  #videoplayer {
+    display: flex;
+    position: absolute;
+    left: 22vw;
+    top: 26vh;
+    border-style: solid;
+    border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.582);
+  border-radius: 3px;
   }
