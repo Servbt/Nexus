@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Servbt/Nexus#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.2",
     "dotenv": "^16.0.0",
@@ -26,6 +27,7 @@
     "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
+    "node": "^18.7.0",
     "sequelize": "^6.16.1",
     "slick-carousel": "^1.8.1"
   },
