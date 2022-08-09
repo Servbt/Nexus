@@ -27,7 +27,8 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.3",
     "sequelize": "^6.16.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "axios": "^0.27.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
