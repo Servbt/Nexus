@@ -164,18 +164,14 @@ router.get('/result/:name', async (req, res) => {
     });
 
     const games = gameData.map((game) => game.get({ plain: true }));
-    console.log(games);
+
     // render chosen Game page
-    console.log(games[0].id)
+    console.log(games[0].id);
+
     res.redirect(
       `/game/${games[0].id}`
     )
-    // res.render('single-game-copy', {
-    //   games,
-    //   searchedName,
-    //   user,
-    //   logged_in: req.session.logged_in,
-    // });
+
   } catch (err) {
     res.status(500).json(err);
   }
