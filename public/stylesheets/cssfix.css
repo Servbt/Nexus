@@ -148,3 +148,20 @@ body {
   border-color: rgba(0, 0, 0, 0.582);
   border-radius: 3px;
   }
+
+  .topgamesname {
+    display: flex;
+    position: relative;
+    top: -52vh;
+    left: 57vw;
+  }
+
+  .top {
+    color: white;
+  }
+
+  .topgames img {
+    box-shadow: 10px 5px 10px #00000056;
+    border: solid 2px #000000;
+    border-radius: 10px;
+  }
