@@ -12,15 +12,16 @@ searchBtn.addEventListener('click', expand);
 $(document).ready(function(){
   console.log("this is working")
   $('.autoplay').slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToShow: 3,
+    slidesToScroll: 2,
     autoplay: true,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 2000,
+  
   });
 });
 
 
-const game1 = document.querySelector('[href="/game/121"]')
+// const game1 = document.querySelector('[href="/game/121"]')
 const game2 = document.querySelector('[href="/game/122"]')
 const game3 = document.querySelector('[href="/game/123"]')
 const game4 = document.querySelector('[href="/game/124"]')
@@ -46,7 +47,7 @@ let cover = document.getElementById("gameCover");
 let gamename = document.getElementById("gamename");
 
 
-  var apiUrl1 = `https://api.twitch.tv/helix/games?name=${game1.innerText}`
+  // var apiUrl1 = `https://api.twitch.tv/helix/games?name=${game1.innerText}`
   var apiUrl2 = `https://api.twitch.tv/helix/games?name=${game2.innerText}`
   var apiUrl3 = `https://api.twitch.tv/helix/games?name=${game3.innerText}`
   var apiUrl4 = `https://api.twitch.tv/helix/games?name=${game4.innerText}`
@@ -67,26 +68,26 @@ let gamename = document.getElementById("gamename");
   var apiUrl19 = `https://api.twitch.tv/helix/games?name=${game19.innerText}`
   var apiUrl20 = `https://api.twitch.tv/helix/games?name=broken age`
 
-  function getGameImage() {
-  fetch(apiUrl1, {  
-    method: "GET",
-    headers: {
-      "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
-      "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
-    }
-  })
-  .then(function (response) {
-      if (response.ok) {
-          console.log(response);
-              response.json().then(function (data) {
-                  console.log(data);
-                      displayGame(data.data[0].id)
+  // function getGameImage() {
+  // fetch(apiUrl1, {  
+  //   method: "GET",
+  //   headers: {
+  //     "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+  //     "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+  //   }
+  // })
+  // .then(function (response) {
+  //     if (response.ok) {
+  //         console.log(response);
+  //             response.json().then(function (data) {
+  //                 console.log(data);
+  //                     displayGame(data.data[0].id)
               
                   
-              })
-          }
-      })
-  }
+  //             })
+  //         }
+  //     })
+  // }
 
   function getGameImage2() {
       fetch(apiUrl2, {  
@@ -485,14 +486,14 @@ function getGameImage11() {
           
           
 
-function displayGame(coverArt) {
+// function displayGame(coverArt) {
 
-  let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
+//   let gameImage = `https://static-cdn.jtvnw.net/ttv-boxart/${coverArt}_IGDB-720x980.jpg`;
 
   
-  game1.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
+//   game1.innerHTML = `<img src="${gameImage} alt="game Image goes here">`
   
-}
+// }
 
 function displayGame2(coverArt) {
 
@@ -664,7 +665,7 @@ function displayGame20(coverArt) {
 }
 
 
-getGameImage(game1)
+// getGameImage(game1)
   getGameImage2(game2)
   getGameImage3(game3)
   getGameImage4(game4)

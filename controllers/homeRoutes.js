@@ -51,7 +51,7 @@ router.get('/home', async (req, res) => {
     const user = userData.get({ plain: true });
 
 
-    Game.findAll({ offset: 120, limit: 20, })
+    Game.findAll({ offset: 121, limit: 19, })
 
       .then((dbData) => {
 

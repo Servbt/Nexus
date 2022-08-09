@@ -30,7 +30,12 @@
 }
 
 a:hover {
-
   background-color: gray;
   opacity: 75%;
 }
+footer {
+  display: none;
+}
+=======
+
+

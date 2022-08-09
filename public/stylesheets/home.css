@@ -45,19 +45,19 @@ body {
   font-family: ZeroFont;
 }
 
-.container {
+.container.autoplay {
   position: absolute;
-  height: 300px;
-  width: 800px;
-  top: 280px;
-  left: calc(55% - 300px);
+  height: 240px;
+  width: 504px;
+  top: 140px;
+  left: calc(80% - 300px);
   display: flex;
 }
 
 .card {
   display: flex;
-  height: 280px;
-  width: 200px;
+  /* height: 280px;
+  width: 200px; */
   background-color: #17141d;
   border-radius: 10px;
   box-shadow: -1rem 0 3rem #000;
@@ -67,12 +67,7 @@ body {
   left: 0px;
 }
 
-.card img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px;
 
-}
 
 .nexuslogo img {
   position: relative;
@@ -224,6 +219,7 @@ h2 {
 }
 
 footer {
+  font-size: 30px;
   color: rgba(128, 128, 128, 0.164);
   display: flex;
   align-content: center;
@@ -231,9 +227,15 @@ footer {
   justify-content: center;
   margin-left: 4rem;
   margin-top: 10px;
-  padding-bottom: 1px;
+  padding-bottom: 5px;
 }
 
+footer h3{
+  position: relative;
+  font-size: 30px;
+  left: 41px;
+  color: rgba(255, 255, 255, 0.418)
+}
 
 #sidebarcon {
   position: fixed;
