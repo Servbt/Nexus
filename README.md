@@ -54,4 +54,4 @@ Nexus is an application that gives users the ability to search through video gam
 
 ![Search Page](./public/images/search-screenshot.png)
 
-![Genre Page](./public/images/genre-screenshot.png)
+![Game Page](./public/images/game-screenshot.png)
