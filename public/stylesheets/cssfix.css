@@ -197,4 +197,6 @@ body {
     font-family: 'Montserrat', sans-serif;
   
   }
-
+div.card-body h4 {
+  font-family: 'Montserrat', sans-serif;
+}
