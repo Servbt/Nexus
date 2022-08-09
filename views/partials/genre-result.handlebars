@@ -1,18 +1,17 @@
-<div class="col-5 p-4">
+<div class="col-6 p-4">
   <a class="angled-img" href="/game/{{id}}">
-    <div class="img img-offset">
-      <img src="/images/street-fighter.jpg" alt="" srcset="" sizes="(max-width: 500px) 100vw, 500px">
-    </div>
-    <div class="bottom-info">
-      <h1>{{game}}</h1>
-      <div class="row">
-        <div class="rating-back h2">
-          {{score}}/10
-        </div>
-      </div>
+    <div class="img ">
+      <img src="/images/street-fighter.jpg" alt="" srcset="" sizes="(max-width: 500px) , 500px">
     </div>
   </a>
-
+  <div>
+    <h3 style="color: #f2700b">{{game}}</h3>
+    <div>
+      <p class="cyber-fnt">
+        Rating: {{score}}/10
+      <p>
+    </div>
+  </div>
 </div>
 
 <style>
