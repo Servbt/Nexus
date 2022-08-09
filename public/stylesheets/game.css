@@ -1,21 +1,21 @@
-body {
+/* body {
   background-color: black;
   color: white;
 }
 
-.grid {
+/* .grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-}
+} */
 
-.container {
+/* .container {
   display: grid;
   grid-template-columns: 60% 40%;
   margin-top: 20px;
-}
+} */
 
 .item {
   width: 33.33%;
@@ -38,7 +38,7 @@ body {
   position: relative;
   display: block;
   overflow: hidden;
-  background: #160962;
+  /* background: #160962; */
   -webkit-transform: skew(-7deg);
   -ms-transform: skew(-7deg);
   transform: skew(-7deg);
@@ -166,6 +166,7 @@ body {
   text-align: center;
 }
 
+/* 
 .angled-img .bottom-info h3,
 .angled-img .bottom-info #buddypress .rtm-gallery-title,
 #buddypress .angled-img .bottom-info .rtm-gallery-title,
@@ -195,31 +196,30 @@ body {
   content: "";
   position: absolute;
   display: block;
-  right: 15%;
-  bottom: -1.5rem;
+  /* right: 15%; */
+/* bottom: -1.5rem;
   left: 15%;
   height: 1px;
   background: rgba(255, 255, 255, 0.2);
-}
-
-
-.img-offset {
+} */
+/* .img-offset {
   transform-origin: 50% 100%;
   position: relative;
   display: block;
   overflow: hidden;
-  background: #160962;
-  transform: skew(-7deg);
-}
+  /* background: #160962; */
+/* transform: skew(-7deg);
+} */
 
-.bottom-info {
+*/
+/* .bottom-info {
   width: 100%;
   margin: 0 auto;
   margin-bottom: 1.8rem;
   text-align: center;
-}
+} */
 
-.title {
+/* .title {
   position: relative;
   margin-top: 1.8rem;
   margin-bottom: 3rem !important;
@@ -228,29 +228,29 @@ body {
   line-height: 20px;
   font-family: "Lato", sans-serif;
   color: #fff;
-}
+} */
 
-.rating {
+/* .rating {
   position: relative;
   display: inline-block;
-}
+} */
 
-.rating .rating-front {
+/* .rating .rating-front {
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
-}
+} */
 
-.svg-inline--fa {
+/* .svg-inline--fa {
   display: inline-block;
   font-size: inherit;
   height: 1em;
   overflow: visible;
   vertical-align: -0.125em;
   color: goldenrod;
-}
+} */
 
-.favorites {
+/* .favorites {
   margin-bottom: 15px;
   text-align: center;
   -webkit-transform: translateX(-5%);
@@ -288,4 +288,5 @@ body {
   -ms-transform: skew(-7deg);
   transform: skew(-7deg);
   z-index: -1;
-}
+} */
+*/
