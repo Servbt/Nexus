@@ -200,3 +200,8 @@ body {
 div.card-body h4 {
   font-family: 'Montserrat', sans-serif;
 }
+
+div.m-3.border.border-3.rounded a {
+  text-decoration: none;
+
+}
