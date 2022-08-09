@@ -168,12 +168,15 @@ router.get('/result/:name', async (req, res) => {
     // render chosen Game page
     console.log(games[0].id);
 
-    res.redirect(
-      `/game/${games[0].id}`
-    )
-
+    if (res.status(404)) {
+      res.send("Sorry, this game is currently unavailable!😢")
+    } else {
+      res.redirect(
+        `/game/${games[0].id}`
+      )
+    }
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json("Sorry, there was an issue retrieving your game!😭");
   }
 });
 
