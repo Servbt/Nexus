@@ -48,7 +48,7 @@ body {
   .sidebar {
     display: flex;
     position: relative;
-    max-height: 100vh;
+    /* max-height: 100vh; */
     min-height: 100vh;
     max-width: 20vw;
     min-height: 100vh;
@@ -82,8 +82,11 @@ body {
     transition:0.5s;
   }
   .containertopgame {
-    max-width:600px;
-    max-height:350px;
+    min-width:60rem;
+    min-height: 8.5rem;
+    position: relative;
+    right: 9vw;
+    top: -30px;
     
     
     
