@@ -12,8 +12,8 @@
 }
 
 .bc-bg {
-  background: rgb(242,112,11);
-background: radial-gradient(circle, rgba(242,112,11,1) 12%, rgba(255,0,0,1) 65%);
+  background: rgb(242, 112, 11);
+  background: radial-gradient(circle, rgba(242, 112, 11, 1) 12%, rgba(255, 0, 0, 1) 65%);
   opacity: 75;
   border-radius: 10px;
 }
@@ -29,7 +29,13 @@ background: radial-gradient(circle, rgba(242,112,11,1) 12%, rgba(255,0,0,1) 65%)
   padding-bottom: 28px;
 }
 
-
+a:hover {
+  background-color: gray;
+  opacity: 75%;
+}
 footer {
   display: none;
 }
+=======
+
+

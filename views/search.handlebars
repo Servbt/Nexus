@@ -14,10 +14,14 @@
   <h1 class="p-3">Results for: {{searchedTerm}}</h1>
 
   {{!-- content --}}
-  {{#if games}}
-  {{#each games as |game|}}
-  {{> search-result}}
-  {{/each}}
+  {{#if gameArr}}
+  <div class="container-fluid">
+    {{#each gameArr}}
+    <div class="p-4 row">
+      {{> search-result}}
+    </div>
+    {{/each}}
+  </div>
 
   {{else}}
   <div class="container-fluid">
@@ -32,3 +36,4 @@
 </div>
 <script src="/javascript/favorites.js"></script>
 <script src="/javascript/search.js"></script>
+<script src="/javascript/result.js"></script>

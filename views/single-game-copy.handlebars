@@ -8,7 +8,7 @@
     <ol class="breadcrumb">
 
       <li class="breadcrumb-item"><a href="/home">Home</a></li>
-      <li class="breadcrumb-item inactive" aria-current="page">Game: {{game}}</li>
+      <li class="breadcrumb-item inactive" aria-current="page">Game: {{games.game}}</li>
     </ol>
   </nav>
 
@@ -28,10 +28,10 @@
 
     <div class="col p-3" id="book-center">
       {{#if hasGame}}
-      <button class="add-btn disabled" disabled>In Your Favorites</button> <br>
-      <button class="delete-btn btn-danger">Remove from Your Favorites</button>
+      <button class="p-2 add-btn disabled" disabled>In Your Favorites</button> <br>
+      <button class="p-2 delete-btn btn-danger">Remove from Your Favorites</button> <br>
       {{else}}
-      <button class="add-btn">Add to Your Favorites</button>
+      <button class="p-2 add-btn">Add to Your Favorites</button>
       {{/if}}
 
     </div>
@@ -47,7 +47,7 @@
         {{#each reviews as |review|}}
         <div style="background-color:#262528">
           <h4>
-            "{{review.content}}" --- {{ user.name}}/{{format_date review.date_created}}
+            "{{review.content}}" -- {{ user.name}} created on {{format_date review.date_created}}
           </h4>
         </div>
         {{/each}}

@@ -1,14 +1,24 @@
 @font-face {
-  font-family: ZeroFont ;
+  font-family: ZeroFont;
   src: url(../Fonts/RapierZero-325M.ttf);
 }
 
-.SIGNOUT, .dropdown {
+@font-face {
+  font-family: Cyber;
+  src: url("https://assets.codepen.io/605876/Blender-Pro-Bold.otf");
+}
+
+.cyber-fnt {
+  font-family: Cyber;
+}
+
+.SIGNOUT,
+.dropdown {
   color: rgb(255, 255, 255);
   font-size: 20px;
   font-weight: lighter;
   text-decoration: none;
-  list-style:disc;
+  list-style: disc;
 }
 
 .SIGNOUT:hover {
@@ -133,6 +143,7 @@ svg {
   text-decoration: none;
   color: white;
 }
+
 .content .nav.nav-pills.nav-justified {
   background-color: rgba(0, 0, 0, 0.151);
   padding-bottom: 5px;
@@ -178,13 +189,13 @@ h2 {
 }
 
 .btn.btn-outline-danger {
-  color: red ;
-  
+  color: red;
+
 
 }
 
 .btn.btn-outline-danger:hover {
-  color: white ;
+  color: white;
   background-color: red;
 
 }
@@ -201,7 +212,7 @@ h2 {
   padding-top: 6px;
   margin-bottom: 10px;
 }
-  
+
 
 .nav-link {
   color: rgb(253, 253, 253);
@@ -237,6 +248,3 @@ footer h3{
   bottom: 0;
   padding-bottom: 5px;
 }
-
-
-

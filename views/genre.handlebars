@@ -16,37 +16,37 @@
   <div class="content">
     <div>
       <section id="genresection">
-        <div>
 
-          <section class="categories">
-            <div class="header">
-              <h1 class="p-3">{{genreTitle}} Games</h1>
-            </div>
-          </section>
-
-          {{#if genres}}
-          <div class="container">
-            <div class="row flex-wrap">
-              {{#each genres as |game|}}
-              {{> search-result}}
-              {{/each}}
-
-            </div>
+        <section class="categories">
+          <div class="header">
+            <h1 class="p-3">{{genreTitle}} Games</h1>
+            <p class="cyber-fnt">Sorted by IGN rating desc: </p>
           </div>
-        </div>
+        </section>
 
-        {{else}}
-        <div class="container-fluid justify-content-center">
+        {{#if genres}}
+        <div class="container-fluid justify-content-evenly">
           <div class="row">
-            <h3 class="h3-color">Sorry, there are no games in this genre.
-            </h3>
+            {{#each genres as |game|}}
+            {{> genre-result}}
+            {{/each}}
+
           </div>
         </div>
-        {{/if}}
-
     </div>
+
+    {{else}}
+    <div class="container-fluid justify-content-center">
+      <div class="row">
+        <h3 class="h3-color">Sorry, there are no games in this genre.
+        </h3>
+      </div>
+    </div>
+    {{/if}}
     </section>
   </div>
+
+
 </div>
 <style>
   #redgenre {
