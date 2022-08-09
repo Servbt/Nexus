@@ -165,3 +165,27 @@ body {
     border: solid 2px #000000;
     border-radius: 10px;
   }
+
+  .categories h1{
+    font-family: zerofont;
+
+  }
+
+  .card p {
+    font-family: 'Montserrat', sans-serif
+  }
+
+  textarea#review-content.form-input {
+    font-family: 'Montserrat', sans-serif
+  }
+
+  input#search-input.form-control.me-2 {
+    font-family: 'Montserrat', sans-serif
+  }
+
+  nav.pt-3.pb-2.px-3.bc-bg {
+    font-family: 'Montserrat', sans-serif
+  }
+  strong {
+    font-family: 'Montserrat', sans-serif
+  }
