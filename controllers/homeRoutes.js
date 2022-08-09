@@ -173,7 +173,7 @@ router.get('/result/:name', async (req, res) => {
     )
 
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).send("Sorry, there was an issue retrieving your game!");
   }
 });
 
