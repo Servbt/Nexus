@@ -57,9 +57,6 @@ router.get('/home', async (req, res) => {
 
         const games = dbData.map((game) => game.get({ plain: true }));
 
-
-
-
         res.render('homepage', {
           user,
           games,
@@ -83,11 +80,10 @@ router.get('/search/:term', async (req, res) => {
 
     const searchedTerm = req.params.term
 
-
     axios.get(`https://api.twitch.tv/helix/search/categories?query=${searchedTerm}`, axiosOptions)
       .then(response => {
         const gameArr = response.data.data;
-        console.log(gameArr)
+        //console.log(gameArr)
         please(gameArr)
       })
       .catch(err => console.log(err))
@@ -149,6 +145,38 @@ router.get('/game/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// render search by name
+router.get('/result/:name', async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Game }, { model: Review }],
+    });
+    const user = userData.get({ plain: true });
+
+    const searchedName = req.params.name.replace('%20', '_');
+    const gameData = await Game.findAll({
+      where: {
+        game: { [Op.like]: `%${req.params.name}%` }
+      },
+      limit: 1
+    });
+
+    const games = gameData.map((game) => game.get({ plain: true }));
+
+    // render chosen Game page
+    console.log(games[0].id);
+
+    res.redirect(
+      `/game/${games[0].id}`
+    )
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 // Get Game by Genre
 router.get('/genre/:genre', async (req, res) => {
