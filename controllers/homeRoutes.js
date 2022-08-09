@@ -194,7 +194,9 @@ router.get('/genre/:genre', async (req, res) => {
           [Op.like]: `%${req.params.genre}%`,
         },
       },
-      order: [['game', 'ASC']]
+      order: [['score', 'DESC']],
+      distinct: true,
+      limit: 500
     });
 
     const genres = genreData.map((game) => game.get({ plain: true }));
