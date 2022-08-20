@@ -20,7 +20,7 @@ Nexus is an application that gives users the ability to search through video gam
 [Noor Ridha](https://github.com/Nridha0)<br>
 [Alex Saunders](https://github.com/alxsaunders)<br> 
 [Arian](https://github.com/Servbt)<br>
-[Rhea Lee](https://github.com/rheangocle)<br>
+[Rhea Le](https://github.com/rheangocle)<br>
 <br>
 ## 💻 Technologies
 
