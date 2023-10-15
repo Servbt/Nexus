@@ -8,7 +8,7 @@ function getGameImage() {
     fetch(apiUrlsingle, {  
       method: "GET",
       headers: {
-        "Authorization": "Bearer xgzr2w68p7c7ivfgcuewooskfmqpyt",
+        "Authorization": "Bearer req3klvu7oehndtfn63wnd9k6qff8v",
         "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
       }
     })
