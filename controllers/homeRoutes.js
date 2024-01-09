@@ -4,7 +4,7 @@ const axios = require('axios').default;
 const axiosOptions = {
 
   headers: {
-    "Authorization": 'Bearer olf3hifogb1yb9ajef1owapd2umfie',
+    "Authorization": 'mk2vtfkhirhf5j30t363w9wycorvm1',
     "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww"
   }
 
