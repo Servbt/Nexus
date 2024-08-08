@@ -1,11 +1,16 @@
 const router = require('express').Router();
 const axios = require('axios').default;
+require('dotenv').config();
+const myKey = process.env.O_AUTH_KEY;
+const myClient = process.env.CLIENT_ID;
+
+
 
 const axiosOptions = {
 
   headers: {
-    "Authorization": 'ctuh5sr3sfsauyrtfuntnj7zn37eq9',
-    "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww"
+    myKey,
+    myClient
   }
 
 }
@@ -26,7 +31,7 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {
   // redirect to home if user is logged in
   if (req.session.logged_in) {
-    res.redirect('/home');
+    res.redirect('https://still-sea-39292.herokuapp.com/home');
     return;
   }
   res.render('login', { layout: 'signin.handlebars' });
@@ -41,7 +46,7 @@ router.get('/signup', async (req, res) => {
 router.get('/home', async (req, res) => {
   try {
     if (!req.session.logged_in) {
-      res.redirect('/login');
+      res.redirect('https://still-sea-39292.herokuapp.com/login');
       return;
     }
     // USER INFO
@@ -83,7 +88,7 @@ router.get('/search/:term', async (req, res) => {
     axios.get(`https://api.twitch.tv/helix/search/categories?query=${searchedTerm}`, axiosOptions)
       .then(response => {
         const gameArr = response.data.data;
-        //console.log(gameArr)
+        console.log(gameArr);
         please(gameArr)
       })
       .catch(err => console.log(err))
@@ -169,7 +174,7 @@ router.get('/result/:name', async (req, res) => {
     console.log(games[0].id);
 
     res.redirect(
-      `/game/${games[0].id}`
+      `https://still-sea-39292.herokuapp.com/game/${games[0].id}`
     )
 
   } catch (err) {

@@ -1,5 +1,8 @@
 const input = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
+require('dotenv').config();
+const myKey = process.env.O_AUTH_KEY;
+const myClient = process.env.CLIENT_ID;
 
 const expand = (e) => {
   e.preventDefault();
@@ -72,8 +75,8 @@ let gamename = document.getElementById("gamename");
   // fetch(apiUrl1, {  
   //   method: "GET",
   //   headers: {
-  //     "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-  //     "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+  //     "Authorization": myKey,
+  //     "Client-ID": myClient,
   //   }
   // })
   // .then(function (response) {
@@ -93,8 +96,8 @@ let gamename = document.getElementById("gamename");
       fetch(apiUrl2, {  
         method: "GET",
         headers: {
-          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+          "Authorization": myKey,
+          "Client-ID": myClient,
         }
       })
       .then(function (response) {
@@ -114,8 +117,8 @@ let gamename = document.getElementById("gamename");
           fetch(apiUrl3, {  
             method: "GET",
             headers: {
-              "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-              "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+              "Authorization": myKey,
+              "Client-ID": myClient,
             }
           })
           .then(function (response) {
@@ -135,8 +138,8 @@ let gamename = document.getElementById("gamename");
       fetch(apiUrl4, {  
         method: "GET",
         headers: {
-          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+          "Authorization": myKey,
+          "Client-ID": myClient,
         }
       })
       .then(function (response) {
@@ -155,8 +158,8 @@ let gamename = document.getElementById("gamename");
           fetch(apiUrl5, {  
             method: "GET",
             headers: {
-              "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-              "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+              "Authorization": myKey,
+              "Client-ID": myClient,
             }
           })
           .then(function (response) {
@@ -176,8 +179,8 @@ let gamename = document.getElementById("gamename");
               fetch(apiUrl6, {  
                 method: "GET",
                 headers: {
-                  "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                  "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                  "Authorization": myKey,
+                  "Client-ID": myClient,
                 }
               })
               .then(function (response) {
@@ -197,8 +200,8 @@ let gamename = document.getElementById("gamename");
                   fetch(apiUrl7, {  
                     method: "GET",
                     headers: {
-                      "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                      "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                      "Authorization": myKey,
+                      "Client-ID": myClient,
                     }
                   })
                   .then(function (response) {
@@ -218,8 +221,8 @@ let gamename = document.getElementById("gamename");
                       fetch(apiUrl8, {  
                         method: "GET",
                         headers: {
-                          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                          "Authorization": myKey,
+                          "Client-ID": myClient,
                         }
                       })
                       .then(function (response) {
@@ -238,8 +241,8 @@ let gamename = document.getElementById("gamename");
                   fetch(apiUrl9, {  
                     method: "GET",
                     headers: {
-                      "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                      "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                      "Authorization": myKey,
+                      "Client-ID": myClient,
                     }
                   })
                   .then(function (response) {
@@ -258,8 +261,8 @@ let gamename = document.getElementById("gamename");
                       fetch(apiUrl10, {  
                         method: "GET",
                         headers: {
-                          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                          "Authorization": myKey,
+                          "Client-ID": myClient,
                         }
                       })
                       .then(function (response) {
@@ -280,8 +283,8 @@ function getGameImage11() {
   fetch(apiUrl11, {  
     method: "GET",
     headers: {
-      "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-      "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+      "Authorization": myKey,
+      "Client-ID": myClient,
     }
   })
   .then(function (response) {
@@ -301,8 +304,8 @@ function getGameImage11() {
       fetch(apiUrl12, {  
         method: "GET",
         headers: {
-          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+          "Authorization": myKey,
+          "Client-ID": myClient,
         }
       })
       .then(function (response) {
@@ -322,8 +325,8 @@ function getGameImage11() {
           fetch(apiUrl13, {  
             method: "GET",
             headers: {
-              "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-              "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+              "Authorization": myKey,
+              "Client-ID": myClient,
             }
           })
           .then(function (response) {
@@ -343,8 +346,8 @@ function getGameImage11() {
       fetch(apiUrl14, {  
         method: "GET",
         headers: {
-          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+          "Authorization": myKey,
+          "Client-ID": myClient,
         }
       })
       .then(function (response) {
@@ -363,8 +366,8 @@ function getGameImage11() {
           fetch(apiUrl15, {  
             method: "GET",
             headers: {
-              "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-              "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+              "Authorization": myKey,
+              "Client-ID": myClient,
             }
           })
           .then(function (response) {
@@ -384,8 +387,8 @@ function getGameImage11() {
               fetch(apiUrl16, {  
                 method: "GET",
                 headers: {
-                  "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                  "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                  "Authorization": myKey,
+                  "Client-ID": myClient,
                 }
               })
               .then(function (response) {
@@ -405,8 +408,8 @@ function getGameImage11() {
                   fetch(apiUrl17, {  
                     method: "GET",
                     headers: {
-                      "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                      "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                      "Authorization": myKey,
+                      "Client-ID": myClient,
                     }
                   })
                   .then(function (response) {
@@ -426,8 +429,8 @@ function getGameImage11() {
                       fetch(apiUrl18, {  
                         method: "GET",
                         headers: {
-                          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                          "Authorization": myKey,
+                          "Client-ID": myClient,
                         }
                       })
                       .then(function (response) {
@@ -446,8 +449,8 @@ function getGameImage11() {
                   fetch(apiUrl19, {  
                     method: "GET",
                     headers: {
-                      "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                      "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                      "Authorization": myKey,
+                      "Client-ID": myClient,
                     }
                   })
                   .then(function (response) {
@@ -466,8 +469,8 @@ function getGameImage11() {
                       fetch(apiUrl20, {  
                         method: "GET",
                         headers: {
-                          "Authorization": "ctuh5sr3sfsauyrtfuntnj7zn37eq9",
-                          "Client-ID": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
+                          "Authorization": myKey,
+                          "Client-ID": myClient,
                         }
                       })
                       .then(function (response) {
