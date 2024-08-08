@@ -9,8 +9,8 @@ const myClient = process.env.CLIENT_ID;
 const axiosOptions = {
 
   headers: {
-    myKey,
-    myClient
+    "Authorization": myKey,
+    "Client-ID": myClient
   }
 
 }
@@ -83,7 +83,7 @@ router.get('/search/:term', async (req, res) => {
     });
     const user = userData.get({ plain: true });
 
-    const searchedTerm = req.params.term
+    const searchedTerm = req.params.term;
 
     axios.get(`https://api.twitch.tv/helix/search/categories?query=${searchedTerm}`, axiosOptions)
       .then(response => {

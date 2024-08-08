@@ -10,8 +10,8 @@ function getGameImage() {
     fetch(apiUrlsingle, {  
       method: "GET",
       headers: {
-        myKey,
-        myClient,
+        "Authorization": myKey,
+        "Client-ID": myClient,
       }
     })
     .then(function (response) {
