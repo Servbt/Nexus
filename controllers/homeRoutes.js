@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 router.get('/login', async (req, res) => {
   // redirect to home if user is logged in
   if (req.session.logged_in) {
-    res.redirect('https://still-sea-39292.herokuapp.com/home');
+    res.redirect('/home');
     return;
   }
   res.render('login', { layout: 'signin.handlebars' });
@@ -46,7 +46,7 @@ router.get('/signup', async (req, res) => {
 router.get('/home', async (req, res) => {
   try {
     if (!req.session.logged_in) {
-      res.redirect('https://still-sea-39292.herokuapp.com/login');
+      res.redirect('/login');
       return;
     }
     // USER INFO
