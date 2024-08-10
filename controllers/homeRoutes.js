@@ -5,17 +5,15 @@ const myKey = process.env.O_AUTH_KEY;
 const myClient = process.env.CLIENT_ID;
 
 
-
 const axiosOptions = {
-
   headers: {
-    "Authorization": myKey,
-    "Client-ID": myClient
+    "Authorization": myKey,  // This should include 'Bearer ' prefix if already in .env
+    "Client-ID": myClient,
   }
+};
 
-}
 
-
+console.log(axiosOptions);
 const { Game, User, Review, Tag } = require('../models');
 
 const withAuth = require('../utils/auth');
@@ -89,7 +87,7 @@ router.get('/search/:term', async (req, res) => {
       .then(response => {
         const gameArr = response.data.data;
         console.log(gameArr);
-        please(gameArr)
+        please(gameArr);
       })
       .catch(err => console.log(err))
 
@@ -174,7 +172,7 @@ router.get('/result/:name', async (req, res) => {
     console.log(games[0].id);
 
     res.redirect(
-      `https://still-sea-39292.herokuapp.com/game/${games[0].id}`
+      `/game/${games[0].id}`
     )
 
   } catch (err) {

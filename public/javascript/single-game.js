@@ -3,6 +3,7 @@ var coverspot = document.querySelector('#gamecover')
 require('dotenv').config();
 const myKey = process.env.O_AUTH_KEY;
 const myClient = process.env.CLIENT_ID;
+console.log(coversingle)
 
 var apiUrlsingle = `https://api.twitch.tv/helix/games?name=${coversingle.innerText}`
 
@@ -11,7 +12,7 @@ function getGameImage() {
       method: "GET",
       headers: {
         "Authorization": myKey,
-        "Client-ID": myClient,
+        "Client-Id": myClient,
       }
     })
     .then(function (response) {
