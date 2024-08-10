@@ -1,8 +1,7 @@
 const input = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
-require('dotenv').config();
-const myKey = process.env.O_AUTH_KEY;
-const myClient = process.env.CLIENT_ID;
+let myKey = "Bearer pl6j2zwdluqjy638v2zgi2q42417qf"
+let myClient = "fj1zbvow6f5o4tbej4txgkv0qbk0ww"
 
 const expand = (e) => {
   e.preventDefault();

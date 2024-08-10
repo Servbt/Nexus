@@ -1,18 +1,15 @@
 var coversingle = document.querySelector("#gamename")
 var coverspot = document.querySelector('#gamecover')
-require('dotenv').config();
-const myKey = process.env.O_AUTH_KEY;
-const myClient = process.env.CLIENT_ID;
-console.log(coversingle)
 
 var apiUrlsingle = `https://api.twitch.tv/helix/games?name=${coversingle.innerText}`
 
 function getGameImage() {
+    console.log(coversingle.innerText);
     fetch(apiUrlsingle, {  
       method: "GET",
       headers: {
-        "Authorization": myKey,
-        "Client-Id": myClient,
+        "Authorization": "Bearer pl6j2zwdluqjy638v2zgi2q42417qf",
+        "Client-Id": "fj1zbvow6f5o4tbej4txgkv0qbk0ww",
       }
     })
     .then(function (response) {
@@ -38,4 +35,4 @@ function getGameImage() {
         
       }
 
-      getGameImage(coverspot)
+      getGameImage(coverspot);

@@ -13,7 +13,6 @@ const axiosOptions = {
 };
 
 
-console.log(axiosOptions);
 const { Game, User, Review, Tag } = require('../models');
 
 const withAuth = require('../utils/auth');
