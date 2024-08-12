@@ -26,6 +26,7 @@ router.get('/', async (req, res) => {
 
 // render login page
 router.get('/login', async (req, res) => {
+  console.log(axiosOptions);
   // redirect to home if user is logged in
   if (req.session.logged_in) {
     res.redirect('/home');
