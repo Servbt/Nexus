@@ -1,7 +1,7 @@
 var coversingle = document.querySelector("#gamename");
 var coverspot = document.querySelector('#gamecover');
 
-let myKey = "Bearer pad9oo0fghos8tqi2m2nquq94qza2v";
+let myKey = "Bearer ts9tp9jgzl5ki4iibhyi4c6kkguxux";
 var apiUrlsingle = `https://api.twitch.tv/helix/games?name=${coversingle.innerText}`
 
 function getGameImage() {
